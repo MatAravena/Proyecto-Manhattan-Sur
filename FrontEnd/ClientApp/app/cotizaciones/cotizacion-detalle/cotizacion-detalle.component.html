@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card tablaDatos ">
+            <div class="card tablaDatos">
+                <table id="tablaListaSiniestro" class="table  table-hover" data-show-refresh="false">
+                    <thead>
+                        <tr>
+                            <th data-field="RutCorredor">
+                                <div class="th-inner ">Rut Corredor</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th data-field="NombreCorredor">
+                                <div class="th-inner ">Nombre Corredor</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th data-field="Ramo">
+                                <div class="th-inner ">Ramo</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th data-field="Sucursal">
+                                <div class="th-inner ">Sucursal</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th data-field="RutCliente">
+                                <div class="th-inner ">Rut Cliente</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th data-field="Descripcion">
+                                <div class="th-inner ">Descripción</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th data-field="EjecutivoComercial">
+                                <div class="th-inner ">Ejecutivo Comercial</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th data-field="Suscriptor">
+                                <div class="th-inner ">Suscriptor</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of [0,1,2]">
+                            <td *ngFor="let i of [0,1,2,3,4,5,6,7]"></td>
+                            <td>
+                                <a title="Ver Seguimiento" href="" class="boton bg-azul small icon  ">Seguimiento<i class="bci-icon seguimiento"></i></a>
+                                <a title="Ver Detalles" href="" class="boton bg-verde small icon  ">Ver Detalles<i class="bci-icon view"></i></a>
+                            </td>
+                        </tr>                                               
+                    </tbody>
+                </table>
+                <div class="separador"></div>
+                <p>Paginador opcion A</p>
+                <nav aria-label="...">
+
+                    <ul class="pagination justify-content-center">
+                        <li class="page-pre disabled"><a title="Anterior / deshabilitado">Anterior</a></li>
+                        <li class="page-first "><a href="" title="Estás en página 1">1</a></li>
+
+                        <li class="page-number active"><a href="" title="Ir a página 2">2</a></li>
+                        <li class="page-number"><a href="" title="Ir a página 3">3</a></li>
+                        <li class="page-number"><a href="" title="Ir a página 4">4</a></li>
+                        <li class="page-number"><a href="" title="Ir a página 5">5</a></li>
+                        <li class="page-last-separator disabled"><a>...</a></li>
+                        <li class="page-last"><a href="" title="Ir a página 100">100</a></li>
+                        <li class="page-next"><a href="" title="Ir a página siguiente">Siguiente</a></li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="separador"></div>
+            <div class="card tablaDatos">
+            </div>
+        </div>
+    </div>
+</div>
+
+

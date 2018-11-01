@@ -1,0 +1,1990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DEL_TBADMINISMOVIMIE">
+          <Key>
+            <PropertyRef Name="IDMOV" />
+          </Key>
+          <Property Name="IDMOV" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOM" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.DEL_TBCOTIZACIONRAMO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="DEL_TBCOTIZACIONRAMO">
+          <Key>
+            <PropertyRef Name="IDCOTRAM" />
+            <PropertyRef Name="IDCOT" />
+            <PropertyRef Name="IDRAM" />
+            <PropertyRef Name="ACT" />
+          </Key>
+          <Property Name="IDCOTRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDCOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="ACT" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.DEL_TBEXCEPCIONES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="DEL_TBEXCEPCIONES">
+          <Key>
+            <PropertyRef Name="IDEXC" />
+            <PropertyRef Name="IDTIPMOV" />
+          </Key>
+          <Property Name="IDEXC" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDTIPMOV" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="CODTIPERR" Type="varchar2" MaxLength="5" />
+          <Property Name="MEN" Type="varchar2" MaxLength="1000" />
+          <Property Name="JSO" Type="clob" />
+          <Property Name="FECAUD" Type="date" />
+          <Property Name="REP" Type="char" MaxLength="5" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.DEL_TBRESPUESTAAPI' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="DEL_TBRESPUESTAAPI">
+          <Key>
+            <PropertyRef Name="IDRESAPI" />
+            <PropertyRef Name="IDTIPMOV" />
+            <PropertyRef Name="FECAUD" />
+          </Key>
+          <Property Name="IDRESAPI" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDTIPMOV" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="RESCOD" Type="varchar2" MaxLength="50" />
+          <Property Name="VOUNUM" Type="varchar2" MaxLength="50" />
+          <Property Name="VIN" Type="varchar2" MaxLength="50" />
+          <Property Name="GLOJSO" Type="clob" />
+          <Property Name="GLOJSOSAL" Type="clob" />
+          <Property Name="GLOJSOENT" Type="clob" />
+          <Property Name="CODDOC" Type="varchar2" MaxLength="50" />
+          <Property Name="FECAUD" Type="date" Nullable="false" />
+          <Property Name="RESMES" Type="varchar2" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TBBANDERA">
+          <Key>
+            <PropertyRef Name="IDBAN" />
+          </Key>
+          <Property Name="IDBAN" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOMBAN" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBBITACORERRORES">
+          <Key>
+            <PropertyRef Name="IDBITACORERRORES" />
+          </Key>
+          <Property Name="IDBITACORERRORES" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="FECHAPETICIO" Type="date" />
+          <Property Name="FECHARESPUES" Type="date" />
+          <Property Name="SISTEMA" Type="varchar2" MaxLength="50" />
+          <Property Name="ACCION" Type="varchar2" MaxLength="50" />
+          <Property Name="GRAVEDA" Type="varchar2" MaxLength="50" />
+          <Property Name="MODULOS" Type="varchar2" MaxLength="50" />
+          <Property Name="CAMPO" Type="varchar2" MaxLength="50" />
+          <Property Name="IDERROR" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCLIENTE">
+          <Key>
+            <PropertyRef Name="RUTCLI" />
+          </Key>
+          <Property Name="RUTCLI" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="NOMCLI" Type="varchar2" MaxLength="50" />
+          <Property Name="EMACLI" Type="varchar2" MaxLength="255" />
+          <Property Name="DIRCLI" Type="varchar2" MaxLength="255" />
+          <Property Name="TELCLI" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="TBCOBASI">
+          <Key>
+            <PropertyRef Name="IDCOBASI" />
+          </Key>
+          <Property Name="IDCOBASI" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="MONASE" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="PRIAFE" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="PRIEXC" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="COM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="LIM" Type="varchar2" MaxLength="50" />
+          <Property Name="SUBLIM" Type="varchar2" MaxLength="50" />
+          <Property Name="DED" Type="varchar2" MaxLength="50" />
+          <Property Name="PRINET" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCOBERTUNOTAS">
+          <Key>
+            <PropertyRef Name="IDCOBNOT" />
+          </Key>
+          <Property Name="IDCOBNOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDCOBASI" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCOMPANI">
+          <Key>
+            <PropertyRef Name="CODCOM" />
+          </Key>
+          <Property Name="CODCOM" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMCOM" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCOMUNA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBCOMUNA">
+          <Key>
+            <PropertyRef Name="CODCOMUNA" />
+            <PropertyRef Name="CODREGION" />
+            <PropertyRef Name="NOMCOMUNA" />
+          </Key>
+          <Property Name="CODCOMUNA" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="CODREGION" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOMCOMUNA" Type="varchar2" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCORREDOR">
+          <Key>
+            <PropertyRef Name="RUTCOR" />
+          </Key>
+          <Property Name="RUTCOR" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="NOMCOR" Type="varchar2" MaxLength="50" />
+          <Property Name="EMACOR" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBCOTIZACION">
+          <Key>
+            <PropertyRef Name="IDCOT" />
+          </Key>
+          <Property Name="IDCOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDOPOCRECOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDRES" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDRAM" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDBAN" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDEJECOM" Type="number" Precision="19" Scale="0" />
+          <Property Name="CODSUC" Type="varchar2" MaxLength="255" />
+          <Property Name="ACTIVID" Type="varchar2" MaxLength="255" />
+          <Property Name="CODMON" Type="number" Precision="38" Scale="0" />
+          <Property Name="CODCOM" Type="number" Precision="38" Scale="0" />
+          <Property Name="FECPRESENT" Type="date" />
+          <Property Name="FECEPCPOL" Type="date" />
+          <Property Name="LICITAC" Type="number" Precision="38" Scale="0" />
+          <Property Name="IDSUSCRIP" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCOTIZACIONUBIC' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBCOTIZACIONUBIC">
+          <Key>
+            <PropertyRef Name="IDCOTUBI" />
+            <PropertyRef Name="IDCOT" />
+          </Key>
+          <Property Name="IDCOTUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDCOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="DIRECCI" Type="varchar2" MaxLength="255" />
+          <Property Name="DIRNRO" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDREG" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDCOMU" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDMURO" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDTECHO" Type="number" Precision="19" Scale="0" />
+          <Property Name="ANOCONSTRU" Type="number" Precision="19" Scale="0" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCOTRAMMAT' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBCOTRAMMAT">
+          <Key>
+            <PropertyRef Name="IDCOTRAMMAT" />
+            <PropertyRef Name="IDCOTRAM" />
+          </Key>
+          <Property Name="IDCOTRAMMAT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDCOTRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCOTRAMNOT' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBCOTRAMNOT">
+          <Key>
+            <PropertyRef Name="IDCOTRAMNOT" />
+            <PropertyRef Name="IDCOTRAM" />
+          </Key>
+          <Property Name="IDCOTRAMNOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDCOTRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCUESUBIC' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBCUESUBIC">
+          <Key>
+            <PropertyRef Name="IDCUE" />
+            <PropertyRef Name="IDUBI" />
+          </Key>
+          <Property Name="IDCUE" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBEJECUTI">
+          <Key>
+            <PropertyRef Name="IDEJECUTI" />
+          </Key>
+          <Property Name="IDEJECUTI" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="RUTEJECUTI" Type="varchar2" MaxLength="100" />
+          <Property Name="NOMBREEJECUTI" Type="varchar2" MaxLength="100" />
+          <Property Name="APELLIDEJECUTI" Type="varchar2" MaxLength="100" />
+          <Property Name="EMAILEJECUTI" Type="varchar2" MaxLength="100" />
+          <Property Name="IDROL" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBERROR">
+          <Key>
+            <PropertyRef Name="IDERROR" />
+          </Key>
+          <Property Name="IDERROR" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="CODIGOERROR" Type="number" Precision="19" Scale="0" />
+          <Property Name="TIPOERROR" Type="varchar2" MaxLength="1000" />
+          <Property Name="MENSAJEDELERROR" Type="varchar2" MaxLength="1000" />
+          <Property Name="ERRORSISTEMA" Type="varchar2" MaxLength="1000" />
+          <Property Name="FUENTEORIGEN" Type="varchar2" MaxLength="500" />
+          <Property Name="METODODELERROR" Type="varchar2" MaxLength="40" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBEXCELIBERESE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBEXCELIBERESE">
+          <Key>
+            <PropertyRef Name="IDEXCLIBRES" />
+            <PropertyRef Name="RUTCOR" />
+            <PropertyRef Name="RUTCLI" />
+            <PropertyRef Name="IDGRURAM" />
+          </Key>
+          <Property Name="IDEXCLIBRES" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="RUTCOR" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="RUTCLI" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="IDGRURAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="FECINI" Type="timestamp" Precision="6" />
+          <Property Name="FECFIN" Type="timestamp" Precision="6" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBFORMAPAGO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBFORMAPAGO">
+          <Key>
+            <PropertyRef Name="IDFORPAG" />
+            <PropertyRef Name="IDPLAPAG" />
+          </Key>
+          <Property Name="IDFORPAG" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDPLAPAG" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBGRUPRAMO">
+          <Key>
+            <PropertyRef Name="IDGRURAM" />
+          </Key>
+          <Property Name="IDGRURAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOMGRURAM" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBHOMOCAMPPIPECOTIRESE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBHOMOCAMPPIPECOTIRESE">
+          <Key>
+            <PropertyRef Name="IDHOM" />
+          </Key>
+          <Property Name="IDHOM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDPIP" Type="number" Precision="19" Scale="0" />
+          <Property Name="KEYPIP" Type="varchar2" MaxLength="50" />
+          <Property Name="NAMPIP" Type="varchar2" MaxLength="50" />
+          <Property Name="AMB" Type="varchar2" MaxLength="50" />
+          <Property Name="TIPUSO" Type="varchar2" MaxLength="50" />
+          <Property Name="NOMCAMCOT" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBHOMOCAMPVALOPIPE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBHOMOCAMPVALOPIPE">
+          <Key>
+            <PropertyRef Name="IDVALCAMPIP" />
+          </Key>
+          <Property Name="IDVALCAMPIP" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="VALCAMPIP" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDHOM" Type="number" Precision="19" Scale="0" />
+          <Property Name="VALCAMCOT" Type="varchar2" MaxLength="50" />
+          <Property Name="VALAGRCAMCOT" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBITEMS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBITEMS">
+          <Key>
+            <PropertyRef Name="IDITE" />
+            <PropertyRef Name="IDUBI" />
+          </Key>
+          <Property Name="IDITE" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBMONASEBAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBMONASEBAS">
+          <Key>
+            <PropertyRef Name="IDMONASEBAS" />
+            <PropertyRef Name="IDUBI" />
+          </Key>
+          <Property Name="IDMONASEBAS" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBMONEDA">
+          <Key>
+            <PropertyRef Name="CODMON" />
+          </Key>
+          <Property Name="CODMON" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMMON" Type="varchar2" MaxLength="255" />
+          <Property Name="ACTIVO" Type="number" Precision="1" Scale="0" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBOCUPACI' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBOCUPACI">
+          <Key>
+            <PropertyRef Name="IDOCUPACI" />
+            <PropertyRef Name="IDRAMO" />
+            <PropertyRef Name="IDTIPORIESGO" />
+            <PropertyRef Name="IDTIPOOCUPACI" />
+          </Key>
+          <Property Name="IDOCUPACI" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDRAMO" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDTIPORIESGO" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDTIPOOCUPACI" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="ACTIVID" Type="varchar2" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="TBOPORCOTIRAMO">
+          <Key>
+            <PropertyRef Name="IDOPORCOTIRAMO" />
+          </Key>
+          <Property Name="IDOPOCRECOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDRAM" Type="number" Precision="19" Scale="0" />
+          <Property Name="IDOPORCOTIRAMO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBOPORCREACOTI">
+          <Key>
+            <PropertyRef Name="IDOPOCRECOT" />
+          </Key>
+          <Property Name="IDOPOCRECOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDDEAPIP" Type="number" Precision="19" Scale="0" />
+          <Property Name="RUTCLIPIP" Type="varchar2" MaxLength="12" />
+          <Property Name="RAZSOCCLI" Type="varchar2" MaxLength="255" />
+          <Property Name="RUTCORPIP" Type="varchar2" MaxLength="12" />
+          <Property Name="NOMRAZSOCCOT" Type="varchar2" MaxLength="255" />
+          <Property Name="APECOR" Type="varchar2" MaxLength="255" />
+          <Property Name="RUTEJECOMCOT" Type="varchar2" MaxLength="12" />
+          <Property Name="NOMEJECOMCOT" Type="varchar2" MaxLength="255" />
+          <Property Name="APEEJECOMCOT" Type="varchar2" MaxLength="255" />
+          <Property Name="EMAEJECOMCOT" Type="varchar2" MaxLength="255" />
+          <Property Name="SUCCOT" Type="varchar2" MaxLength="50" />
+          <Property Name="GRURAMCOT" Type="number" Precision="19" Scale="0" />
+          <Property Name="DESOPOCOT" Type="varchar2" MaxLength="50" />
+          <Property Name="FECCRECOT" Type="date" />
+          <Property Name="ESTOPOPIP" Type="varchar2" MaxLength="50" />
+          <Property Name="IDSTAPIP" Type="number" Precision="19" Scale="0" />
+          <Property Name="NOMCONCOR" Type="varchar2" MaxLength="255" />
+          <Property Name="EMAILCLI" Type="varchar2" MaxLength="255" />
+          <Property Name="TELCLI" Type="varchar2" MaxLength="255" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBOPORTUNIDAD' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBOPORTUNIDAD">
+          <Key>
+            <PropertyRef Name="IDDEA" />
+            <PropertyRef Name="IDCOT" />
+          </Key>
+          <Property Name="IDDEA" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDCOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBOPORTUNRECIENT' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBOPORTUNRECIENT">
+          <Key>
+            <PropertyRef Name="IDOPOREC" />
+          </Key>
+          <Property Name="IDOPOREC" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="CAMPIP" Type="varchar2" MaxLength="50" />
+          <Property Name="VALCAMPIP" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBPLANPAGO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBPLANPAGO">
+          <Key>
+            <PropertyRef Name="IDPLAPAG" />
+          </Key>
+          <Property Name="IDPLAPAG" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBPRECUERAM' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBPRECUERAM">
+          <Key>
+            <PropertyRef Name="IDPRECUE" />
+            <PropertyRef Name="IDRAM" />
+          </Key>
+          <Property Name="IDPRECUE" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBRAMO">
+          <Key>
+            <PropertyRef Name="IDRAM" />
+          </Key>
+          <Property Name="IDRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="CODRAM" Type="varchar2" MaxLength="50" />
+          <Property Name="NOMRAM" Type="varchar2" MaxLength="50" />
+          <Property Name="IDGRURAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="CODPIP" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBREGION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBREGION">
+          <Key>
+            <PropertyRef Name="CODREGION" />
+            <PropertyRef Name="NOMREGION" />
+          </Key>
+          <Property Name="CODREGION" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOMREGION" Type="varchar2" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBRESERVA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBRESERVA">
+          <Key>
+            <PropertyRef Name="IDRES" />
+            <PropertyRef Name="RUTCOR" />
+            <PropertyRef Name="RUTCLI" />
+            <PropertyRef Name="IDGRURAM" />
+          </Key>
+          <Property Name="IDRES" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="RUTCOR" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="RUTCLI" Type="varchar2" MaxLength="12" Nullable="false" />
+          <Property Name="IDGRURAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="FECINI" Type="timestamp" Precision="6" />
+          <Property Name="FECFIN" Type="timestamp" Precision="6" />
+        </EntityType>
+        <EntityType Name="TBROL">
+          <Key>
+            <PropertyRef Name="IDROL" />
+          </Key>
+          <Property Name="IDROL" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOMROL" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBSUCURSA">
+          <Key>
+            <PropertyRef Name="CODSUC" />
+          </Key>
+          <Property Name="CODSUC" Type="varchar2" MaxLength="5" Nullable="false" />
+          <Property Name="DESSUC" Type="varchar2" MaxLength="50" />
+          <Property Name="CODPIP" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBTIPOOCUP">
+          <Key>
+            <PropertyRef Name="IDTIPOCU" />
+          </Key>
+          <Property Name="IDTIPOCU" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOMTIPOCU" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBTIPORIES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBTIPORIES">
+          <Key>
+            <PropertyRef Name="IDTIPRIE" />
+            <PropertyRef Name="NOMTIPRIE" />
+          </Key>
+          <Property Name="IDTIPRIE" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOMTIPRIE" Type="varchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBTOOLTIP' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBTOOLTIP">
+          <Key>
+            <PropertyRef Name="CODTOOLTIP" />
+            <PropertyRef Name="NOMTOOLTIP" />
+          </Key>
+          <Property Name="CODTOOLTIP" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="NOMTOOLTIP" Type="varchar2" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBUBICACION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TBUBICACION">
+          <Key>
+            <PropertyRef Name="IDUBI" />
+            <PropertyRef Name="IDCOTRAM" />
+          </Key>
+          <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="IDCOTRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TBBITACORERRORES_IDERROR">
+          <End Role="TBERROR" Type="Self.TBERROR" Multiplicity="1" />
+          <End Role="TBBITACORERRORES" Type="Self.TBBITACORERRORES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBERROR">
+              <PropertyRef Name="IDERROR" />
+            </Principal>
+            <Dependent Role="TBBITACORERRORES">
+              <PropertyRef Name="IDERROR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK1_TBCOBERTUNOTAS_IDCOBASI">
+          <End Role="TBCOBASI" Type="Self.TBCOBASI" Multiplicity="1" />
+          <End Role="TBCOBERTUNOTAS" Type="Self.TBCOBERTUNOTAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBCOBASI">
+              <PropertyRef Name="IDCOBASI" />
+            </Principal>
+            <Dependent Role="TBCOBERTUNOTAS">
+              <PropertyRef Name="IDCOBASI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBCOTIZACION_CODSUC_FK">
+          <End Role="TBSUCURSA" Type="Self.TBSUCURSA" Multiplicity="0..1" />
+          <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBSUCURSA">
+              <PropertyRef Name="CODSUC" />
+            </Principal>
+            <Dependent Role="TBCOTIZACION">
+              <PropertyRef Name="CODSUC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBCOTIZACION_EJECOM_FK">
+          <End Role="TBEJECUTI" Type="Self.TBEJECUTI" Multiplicity="0..1" />
+          <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBEJECUTI">
+              <PropertyRef Name="IDEJECUTI" />
+            </Principal>
+            <Dependent Role="TBCOTIZACION">
+              <PropertyRef Name="IDEJECOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBCOTIZACION_FK">
+          <End Role="TBOPORCREACOTI" Type="Self.TBOPORCREACOTI" Multiplicity="1" />
+          <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBOPORCREACOTI">
+              <PropertyRef Name="IDOPOCRECOT" />
+            </Principal>
+            <Dependent Role="TBCOTIZACION">
+              <PropertyRef Name="IDOPOCRECOT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBCOTIZACION_IDBAN_FK">
+          <End Role="TBBANDERA" Type="Self.TBBANDERA" Multiplicity="0..1" />
+          <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBBANDERA">
+              <PropertyRef Name="IDBAN" />
+            </Principal>
+            <Dependent Role="TBCOTIZACION">
+              <PropertyRef Name="IDBAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBEJECUTI_IDROL_FK">
+          <End Role="TBROL" Type="Self.TBROL" Multiplicity="1" />
+          <End Role="TBEJECUTI" Type="Self.TBEJECUTI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBROL">
+              <PropertyRef Name="IDROL" />
+            </Principal>
+            <Dependent Role="TBEJECUTI">
+              <PropertyRef Name="IDROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBOPORCOTIRAMO_FK">
+          <End Role="TBOPORCREACOTI" Type="Self.TBOPORCREACOTI" Multiplicity="1" />
+          <End Role="TBOPORCOTIRAMO" Type="Self.TBOPORCOTIRAMO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBOPORCREACOTI">
+              <PropertyRef Name="IDOPOCRECOT" />
+            </Principal>
+            <Dependent Role="TBOPORCOTIRAMO">
+              <PropertyRef Name="IDOPOCRECOT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBRAMO_IDGRUPGRA_FK">
+          <End Role="TBGRUPRAMO" Type="Self.TBGRUPRAMO" Multiplicity="1" />
+          <End Role="TBRAMO" Type="Self.TBRAMO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBGRUPRAMO">
+              <PropertyRef Name="IDGRURAM" />
+            </Principal>
+            <Dependent Role="TBRAMO">
+              <PropertyRef Name="IDGRURAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="PKG_LIN_COM_SP_BANDEJA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_BANDEJA">
+          <Parameter Name="P_FECCRECOT" Type="varchar2" Mode="In" />
+          <Parameter Name="P_IDCOT" Type="varchar2" Mode="In" />
+          <Parameter Name="P_RUTCLIPIP" Type="varchar2" Mode="In" />
+          <Parameter Name="P_CODSUC" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="PKG_LIN_COM_SP_CBM_COMPANI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_COMPANI" />
+        <Function Name="PKG_LIN_COM_SP_CBM_CORREDOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_CORREDOR" />
+        <Function Name="PKG_LIN_COM_SP_CBM_ESTADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_ESTADO" />
+        <Function Name="PKG_LIN_COM_SP_CBM_GRUPO_RAMO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_GRUPO_RAMO" />
+        <Function Name="PKG_LIN_COM_SP_CBM_MONEDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_MONEDA" />
+        <Function Name="PKG_LIN_COM_SP_CBM_RAMO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_RAMO">
+          <Parameter Name="P_GRURAM" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="PKG_LIN_COM_SP_CBM_SUCURSAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_SUCURSAL" />
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="DEL_TBADMINISMOVIMIE" EntityType="Self.DEL_TBADMINISMOVIMIE" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBBANDERA" EntityType="Self.TBBANDERA" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBBITACORERRORES" EntityType="Self.TBBITACORERRORES" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBCLIENTE" EntityType="Self.TBCLIENTE" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBCOBASI" EntityType="Self.TBCOBASI" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBCOBERTUNOTAS" EntityType="Self.TBCOBERTUNOTAS" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBCOMPANI" EntityType="Self.TBCOMPANI" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBCORREDOR" EntityType="Self.TBCORREDOR" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBCOTIZACION" EntityType="Self.TBCOTIZACION" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBEJECUTI" EntityType="Self.TBEJECUTI" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBERROR" EntityType="Self.TBERROR" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBGRUPRAMO" EntityType="Self.TBGRUPRAMO" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBMONEDA" EntityType="Self.TBMONEDA" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBOPORCOTIRAMO" EntityType="Self.TBOPORCOTIRAMO" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBOPORCREACOTI" EntityType="Self.TBOPORCREACOTI" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBRAMO" EntityType="Self.TBRAMO" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBROL" EntityType="Self.TBROL" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBSUCURSA" EntityType="Self.TBSUCURSA" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="TBTIPOOCUP" EntityType="Self.TBTIPOOCUP" Schema="ADMBCIVLC" store:Type="Tables" />
+          <EntitySet Name="DEL_TBCOTIZACIONRAMO" EntityType="Self.DEL_TBCOTIZACIONRAMO" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"DEL_TBCOTIZACIONRAMO"."IDCOTRAM" AS "IDCOTRAM", 
+"DEL_TBCOTIZACIONRAMO"."IDCOT" AS "IDCOT", 
+"DEL_TBCOTIZACIONRAMO"."IDRAM" AS "IDRAM", 
+"DEL_TBCOTIZACIONRAMO"."ACT" AS "ACT"
+FROM "ADMBCIVLC"."DEL_TBCOTIZACIONRAMO" "DEL_TBCOTIZACIONRAMO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DEL_TBEXCEPCIONES" EntityType="Self.DEL_TBEXCEPCIONES" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"DEL_TBEXCEPCIONES"."IDEXC" AS "IDEXC", 
+"DEL_TBEXCEPCIONES"."IDTIPMOV" AS "IDTIPMOV", 
+"DEL_TBEXCEPCIONES"."CODTIPERR" AS "CODTIPERR", 
+"DEL_TBEXCEPCIONES"."MEN" AS "MEN", 
+"DEL_TBEXCEPCIONES"."JSO" AS "JSO", 
+"DEL_TBEXCEPCIONES"."FECAUD" AS "FECAUD", 
+"DEL_TBEXCEPCIONES"."REP" AS "REP"
+FROM "ADMBCIVLC"."DEL_TBEXCEPCIONES" "DEL_TBEXCEPCIONES"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DEL_TBRESPUESTAAPI" EntityType="Self.DEL_TBRESPUESTAAPI" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"DEL_TBRESPUESTAAPI"."IDRESAPI" AS "IDRESAPI", 
+"DEL_TBRESPUESTAAPI"."IDTIPMOV" AS "IDTIPMOV", 
+"DEL_TBRESPUESTAAPI"."RESCOD" AS "RESCOD", 
+"DEL_TBRESPUESTAAPI"."VOUNUM" AS "VOUNUM", 
+"DEL_TBRESPUESTAAPI"."VIN" AS "VIN", 
+"DEL_TBRESPUESTAAPI"."GLOJSO" AS "GLOJSO", 
+"DEL_TBRESPUESTAAPI"."GLOJSOSAL" AS "GLOJSOSAL", 
+"DEL_TBRESPUESTAAPI"."GLOJSOENT" AS "GLOJSOENT", 
+"DEL_TBRESPUESTAAPI"."CODDOC" AS "CODDOC", 
+"DEL_TBRESPUESTAAPI"."FECAUD" AS "FECAUD", 
+"DEL_TBRESPUESTAAPI"."RESMES" AS "RESMES"
+FROM "ADMBCIVLC"."DEL_TBRESPUESTAAPI" "DEL_TBRESPUESTAAPI"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBCOMUNA" EntityType="Self.TBCOMUNA" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBCOMUNA"."CODCOMUNA" AS "CODCOMUNA", 
+"TBCOMUNA"."CODREGION" AS "CODREGION", 
+"TBCOMUNA"."NOMCOMUNA" AS "NOMCOMUNA"
+FROM "ADMBCIVLC"."TBCOMUNA" "TBCOMUNA"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBCOTIZACIONUBIC" EntityType="Self.TBCOTIZACIONUBIC" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBCOTIZACIONUBIC"."IDCOTUBI" AS "IDCOTUBI", 
+"TBCOTIZACIONUBIC"."IDCOT" AS "IDCOT", 
+"TBCOTIZACIONUBIC"."DIRECCI" AS "DIRECCI", 
+"TBCOTIZACIONUBIC"."DIRNRO" AS "DIRNRO", 
+"TBCOTIZACIONUBIC"."IDREG" AS "IDREG", 
+"TBCOTIZACIONUBIC"."IDCOMU" AS "IDCOMU", 
+"TBCOTIZACIONUBIC"."IDMURO" AS "IDMURO", 
+"TBCOTIZACIONUBIC"."IDTECHO" AS "IDTECHO", 
+"TBCOTIZACIONUBIC"."ANOCONSTRU" AS "ANOCONSTRU"
+FROM "ADMBCIVLC"."TBCOTIZACIONUBIC" "TBCOTIZACIONUBIC"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBCOTRAMMAT" EntityType="Self.TBCOTRAMMAT" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBCOTRAMMAT"."IDCOTRAMMAT" AS "IDCOTRAMMAT", 
+"TBCOTRAMMAT"."IDCOTRAM" AS "IDCOTRAM"
+FROM "ADMBCIVLC"."TBCOTRAMMAT" "TBCOTRAMMAT"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBCOTRAMNOT" EntityType="Self.TBCOTRAMNOT" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBCOTRAMNOT"."IDCOTRAMNOT" AS "IDCOTRAMNOT", 
+"TBCOTRAMNOT"."IDCOTRAM" AS "IDCOTRAM"
+FROM "ADMBCIVLC"."TBCOTRAMNOT" "TBCOTRAMNOT"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBCUESUBIC" EntityType="Self.TBCUESUBIC" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBCUESUBIC"."IDCUE" AS "IDCUE", 
+"TBCUESUBIC"."IDUBI" AS "IDUBI"
+FROM "ADMBCIVLC"."TBCUESUBIC" "TBCUESUBIC"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBEXCELIBERESE" EntityType="Self.TBEXCELIBERESE" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBEXCELIBERESE"."IDEXCLIBRES" AS "IDEXCLIBRES", 
+"TBEXCELIBERESE"."RUTCOR" AS "RUTCOR", 
+"TBEXCELIBERESE"."RUTCLI" AS "RUTCLI", 
+"TBEXCELIBERESE"."IDGRURAM" AS "IDGRURAM", 
+"TBEXCELIBERESE"."FECINI" AS "FECINI", 
+"TBEXCELIBERESE"."FECFIN" AS "FECFIN"
+FROM "ADMBCIVLC"."TBEXCELIBERESE" "TBEXCELIBERESE"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBFORMAPAGO" EntityType="Self.TBFORMAPAGO" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBFORMAPAGO"."IDFORPAG" AS "IDFORPAG", 
+"TBFORMAPAGO"."IDPLAPAG" AS "IDPLAPAG"
+FROM "ADMBCIVLC"."TBFORMAPAGO" "TBFORMAPAGO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBHOMOCAMPPIPECOTIRESE" EntityType="Self.TBHOMOCAMPPIPECOTIRESE" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBHOMOCAMPPIPECOTIRESE"."IDHOM" AS "IDHOM", 
+"TBHOMOCAMPPIPECOTIRESE"."IDPIP" AS "IDPIP", 
+"TBHOMOCAMPPIPECOTIRESE"."KEYPIP" AS "KEYPIP", 
+"TBHOMOCAMPPIPECOTIRESE"."NAMPIP" AS "NAMPIP", 
+"TBHOMOCAMPPIPECOTIRESE"."AMB" AS "AMB", 
+"TBHOMOCAMPPIPECOTIRESE"."TIPUSO" AS "TIPUSO", 
+"TBHOMOCAMPPIPECOTIRESE"."NOMCAMCOT" AS "NOMCAMCOT"
+FROM "ADMBCIVLC"."TBHOMOCAMPPIPECOTIRESE" "TBHOMOCAMPPIPECOTIRESE"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBHOMOCAMPVALOPIPE" EntityType="Self.TBHOMOCAMPVALOPIPE" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBHOMOCAMPVALOPIPE"."IDVALCAMPIP" AS "IDVALCAMPIP", 
+"TBHOMOCAMPVALOPIPE"."VALCAMPIP" AS "VALCAMPIP", 
+"TBHOMOCAMPVALOPIPE"."IDHOM" AS "IDHOM", 
+"TBHOMOCAMPVALOPIPE"."VALCAMCOT" AS "VALCAMCOT", 
+"TBHOMOCAMPVALOPIPE"."VALAGRCAMCOT" AS "VALAGRCAMCOT"
+FROM "ADMBCIVLC"."TBHOMOCAMPVALOPIPE" "TBHOMOCAMPVALOPIPE"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBITEMS" EntityType="Self.TBITEMS" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBITEMS"."IDITE" AS "IDITE", 
+"TBITEMS"."IDUBI" AS "IDUBI"
+FROM "ADMBCIVLC"."TBITEMS" "TBITEMS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBMONASEBAS" EntityType="Self.TBMONASEBAS" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBMONASEBAS"."IDMONASEBAS" AS "IDMONASEBAS", 
+"TBMONASEBAS"."IDUBI" AS "IDUBI"
+FROM "ADMBCIVLC"."TBMONASEBAS" "TBMONASEBAS"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBOCUPACI" EntityType="Self.TBOCUPACI" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBOCUPACI"."IDOCUPACI" AS "IDOCUPACI", 
+"TBOCUPACI"."IDRAMO" AS "IDRAMO", 
+"TBOCUPACI"."IDTIPORIESGO" AS "IDTIPORIESGO", 
+"TBOCUPACI"."IDTIPOOCUPACI" AS "IDTIPOOCUPACI", 
+"TBOCUPACI"."ACTIVID" AS "ACTIVID"
+FROM "ADMBCIVLC"."TBOCUPACI" "TBOCUPACI"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBOPORTUNIDAD" EntityType="Self.TBOPORTUNIDAD" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBOPORTUNIDAD"."IDDEA" AS "IDDEA", 
+"TBOPORTUNIDAD"."IDCOT" AS "IDCOT"
+FROM "ADMBCIVLC"."TBOPORTUNIDAD" "TBOPORTUNIDAD"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBOPORTUNRECIENT" EntityType="Self.TBOPORTUNRECIENT" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBOPORTUNRECIENT"."IDOPOREC" AS "IDOPOREC", 
+"TBOPORTUNRECIENT"."CAMPIP" AS "CAMPIP", 
+"TBOPORTUNRECIENT"."VALCAMPIP" AS "VALCAMPIP"
+FROM "ADMBCIVLC"."TBOPORTUNRECIENT" "TBOPORTUNRECIENT"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBPLANPAGO" EntityType="Self.TBPLANPAGO" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBPLANPAGO"."IDPLAPAG" AS "IDPLAPAG"
+FROM "ADMBCIVLC"."TBPLANPAGO" "TBPLANPAGO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBPRECUERAM" EntityType="Self.TBPRECUERAM" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBPRECUERAM"."IDPRECUE" AS "IDPRECUE", 
+"TBPRECUERAM"."IDRAM" AS "IDRAM"
+FROM "ADMBCIVLC"."TBPRECUERAM" "TBPRECUERAM"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBREGION" EntityType="Self.TBREGION" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBREGION"."CODREGION" AS "CODREGION", 
+"TBREGION"."NOMREGION" AS "NOMREGION"
+FROM "ADMBCIVLC"."TBREGION" "TBREGION"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBRESERVA" EntityType="Self.TBRESERVA" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBRESERVA"."IDRES" AS "IDRES", 
+"TBRESERVA"."RUTCOR" AS "RUTCOR", 
+"TBRESERVA"."RUTCLI" AS "RUTCLI", 
+"TBRESERVA"."IDGRURAM" AS "IDGRURAM", 
+"TBRESERVA"."FECINI" AS "FECINI", 
+"TBRESERVA"."FECFIN" AS "FECFIN"
+FROM "ADMBCIVLC"."TBRESERVA" "TBRESERVA"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBTIPORIES" EntityType="Self.TBTIPORIES" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBTIPORIES"."IDTIPRIE" AS "IDTIPRIE", 
+"TBTIPORIES"."NOMTIPRIE" AS "NOMTIPRIE"
+FROM "ADMBCIVLC"."TBTIPORIES" "TBTIPORIES"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBTOOLTIP" EntityType="Self.TBTOOLTIP" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBTOOLTIP"."CODTOOLTIP" AS "CODTOOLTIP", 
+"TBTOOLTIP"."NOMTOOLTIP" AS "NOMTOOLTIP"
+FROM "ADMBCIVLC"."TBTOOLTIP" "TBTOOLTIP"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBUBICACION" EntityType="Self.TBUBICACION" store:Type="Tables" store:Schema="ADMBCIVLC">
+            <DefiningQuery>SELECT 
+"TBUBICACION"."IDUBI" AS "IDUBI", 
+"TBUBICACION"."IDCOTRAM" AS "IDCOTRAM"
+FROM "ADMBCIVLC"."TBUBICACION" "TBUBICACION"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_TBBITACORERRORES_IDERROR" Association="Self.FK_TBBITACORERRORES_IDERROR">
+            <End Role="TBERROR" EntitySet="TBERROR" />
+            <End Role="TBBITACORERRORES" EntitySet="TBBITACORERRORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK1_TBCOBERTUNOTAS_IDCOBASI" Association="Self.FK1_TBCOBERTUNOTAS_IDCOBASI">
+            <End Role="TBCOBASI" EntitySet="TBCOBASI" />
+            <End Role="TBCOBERTUNOTAS" EntitySet="TBCOBERTUNOTAS" />
+          </AssociationSet>
+          <AssociationSet Name="TBCOTIZACION_CODSUC_FK" Association="Self.TBCOTIZACION_CODSUC_FK">
+            <End Role="TBSUCURSA" EntitySet="TBSUCURSA" />
+            <End Role="TBCOTIZACION" EntitySet="TBCOTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="TBCOTIZACION_EJECOM_FK" Association="Self.TBCOTIZACION_EJECOM_FK">
+            <End Role="TBEJECUTI" EntitySet="TBEJECUTI" />
+            <End Role="TBCOTIZACION" EntitySet="TBCOTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="TBCOTIZACION_FK" Association="Self.TBCOTIZACION_FK">
+            <End Role="TBOPORCREACOTI" EntitySet="TBOPORCREACOTI" />
+            <End Role="TBCOTIZACION" EntitySet="TBCOTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="TBCOTIZACION_IDBAN_FK" Association="Self.TBCOTIZACION_IDBAN_FK">
+            <End Role="TBBANDERA" EntitySet="TBBANDERA" />
+            <End Role="TBCOTIZACION" EntitySet="TBCOTIZACION" />
+          </AssociationSet>
+          <AssociationSet Name="TBEJECUTI_IDROL_FK" Association="Self.TBEJECUTI_IDROL_FK">
+            <End Role="TBROL" EntitySet="TBROL" />
+            <End Role="TBEJECUTI" EntitySet="TBEJECUTI" />
+          </AssociationSet>
+          <AssociationSet Name="TBOPORCOTIRAMO_FK" Association="Self.TBOPORCOTIRAMO_FK">
+            <End Role="TBOPORCREACOTI" EntitySet="TBOPORCREACOTI" />
+            <End Role="TBOPORCOTIRAMO" EntitySet="TBOPORCOTIRAMO" />
+          </AssociationSet>
+          <AssociationSet Name="TBRAMO_IDGRUPGRA_FK" Association="Self.TBRAMO_IDGRUPGRA_FK">
+            <End Role="TBGRUPRAMO" EntitySet="TBGRUPRAMO" />
+            <End Role="TBRAMO" EntitySet="TBRAMO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DEL_TBADMINISMOVIMIE">
+          <Key>
+            <PropertyRef Name="IDMOV" />
+          </Key>
+          <Property Name="IDMOV" Type="Int64" Nullable="false" />
+          <Property Name="NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBBANDERA">
+          <Key>
+            <PropertyRef Name="IDBAN" />
+          </Key>
+          <Property Name="IDBAN" Type="Int64" Nullable="false" />
+          <Property Name="NOMBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBCOTIZACIONs" Relationship="Self.TBCOTIZACION_IDBAN_FK" FromRole="TBBANDERA" ToRole="TBCOTIZACION" />
+        </EntityType>
+        <EntityType Name="TBBITACORERRORE">
+          <Key>
+            <PropertyRef Name="IDBITACORERRORES" />
+          </Key>
+          <Property Name="IDBITACORERRORES" Type="Int64" Nullable="false" />
+          <Property Name="FECHAPETICIO" Type="DateTime" />
+          <Property Name="FECHARESPUES" Type="DateTime" />
+          <Property Name="SISTEMA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ACCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GRAVEDA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODULOS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CAMPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDERROR" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="TBERROR" Relationship="Self.FK_TBBITACORERRORES_IDERROR" FromRole="TBBITACORERRORES" ToRole="TBERROR" />
+        </EntityType>
+        <EntityType Name="TBCLIENTE">
+          <Key>
+            <PropertyRef Name="RUTCLI" />
+          </Key>
+          <Property Name="RUTCLI" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMCLI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMACLI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DIRCLI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TELCLI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBCOBASI">
+          <Key>
+            <PropertyRef Name="IDCOBASI" />
+          </Key>
+          <Property Name="IDCOBASI" Type="Int64" Nullable="false" />
+          <Property Name="IDUBI" Type="Int64" Nullable="false" />
+          <Property Name="MONASE" Type="Int64" Nullable="false" />
+          <Property Name="PRIAFE" Type="Int64" Nullable="false" />
+          <Property Name="PRIEXC" Type="Int64" Nullable="false" />
+          <Property Name="COM" Type="Int64" Nullable="false" />
+          <Property Name="LIM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUBLIM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRINET" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="TBCOBERTUNOTAS" Relationship="Self.FK1_TBCOBERTUNOTAS_IDCOBASI" FromRole="TBCOBASI" ToRole="TBCOBERTUNOTAS" />
+        </EntityType>
+        <EntityType Name="TBCOBERTUNOTA">
+          <Key>
+            <PropertyRef Name="IDCOBNOT" />
+          </Key>
+          <Property Name="IDCOBNOT" Type="Int64" Nullable="false" />
+          <Property Name="IDCOBASI" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="TBCOBASI" Relationship="Self.FK1_TBCOBERTUNOTAS_IDCOBASI" FromRole="TBCOBERTUNOTAS" ToRole="TBCOBASI" />
+        </EntityType>
+        <EntityType Name="TBCOMPANI">
+          <Key>
+            <PropertyRef Name="CODCOM" />
+          </Key>
+          <Property Name="CODCOM" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMCOM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBCORREDOR">
+          <Key>
+            <PropertyRef Name="RUTCOR" />
+          </Key>
+          <Property Name="RUTCOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMCOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EMACOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBCOTIZACION">
+          <Key>
+            <PropertyRef Name="IDCOT" />
+          </Key>
+          <Property Name="IDCOT" Type="Int64" Nullable="false" />
+          <Property Name="IDOPOCRECOT" Type="Int64" Nullable="false" />
+          <Property Name="IDRES" Type="Int64" />
+          <Property Name="IDRAM" Type="Int64" />
+          <Property Name="IDBAN" Type="Int64" />
+          <Property Name="IDEJECOM" Type="Int64" />
+          <Property Name="CODSUC" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ACTIVID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CODMON" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CODCOM" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FECPRESENT" Type="DateTime" />
+          <Property Name="FECEPCPOL" Type="DateTime" />
+          <Property Name="LICITAC" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="TBBANDERA" Relationship="Self.TBCOTIZACION_IDBAN_FK" FromRole="TBCOTIZACION" ToRole="TBBANDERA" />
+          <NavigationProperty Name="TBSUCURSA" Relationship="Self.TBCOTIZACION_CODSUC_FK" FromRole="TBCOTIZACION" ToRole="TBSUCURSA" />
+          <NavigationProperty Name="TBOPORCREACOTI" Relationship="Self.TBCOTIZACION_FK" FromRole="TBCOTIZACION" ToRole="TBOPORCREACOTI" />
+          <Property Name="IDSUSCRIP" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="TBEJECUTI" Relationship="Model.TBCOTIZACION_EJECOM_FK" FromRole="TBCOTIZACION" ToRole="TBEJECUTI" />
+        </EntityType>
+        <EntityType Name="TBEJECUTI">
+          <Key>
+            <PropertyRef Name="IDEJECUTI" />
+          </Key>
+          <Property Name="IDEJECUTI" Type="Int64" Nullable="false" />
+          <Property Name="RUTEJECUTI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBREEJECUTI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="APELLIDEJECUTI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMAILEJECUTI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IDROL" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="TBROL" Relationship="Self.TBEJECUTI_IDROL_FK" FromRole="TBEJECUTI" ToRole="TBROL" />
+          <NavigationProperty Name="TBCOTIZACIONs" Relationship="Model.TBCOTIZACION_EJECOM_FK" FromRole="TBEJECUTI" ToRole="TBCOTIZACION" />
+        </EntityType>
+        <EntityType Name="TBERROR">
+          <Key>
+            <PropertyRef Name="IDERROR" />
+          </Key>
+          <Property Name="IDERROR" Type="Int64" Nullable="false" />
+          <Property Name="CODIGOERROR" Type="Int64" />
+          <Property Name="TIPOERROR" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="MENSAJEDELERROR" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ERRORSISTEMA" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="FUENTEORIGEN" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="METODODELERROR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBBITACORERRORES" Relationship="Self.FK_TBBITACORERRORES_IDERROR" FromRole="TBERROR" ToRole="TBBITACORERRORES" />
+        </EntityType>
+        <EntityType Name="TBGRUPRAMO">
+          <Key>
+            <PropertyRef Name="IDGRURAM" />
+          </Key>
+          <Property Name="IDGRURAM" Type="Int64" Nullable="false" />
+          <Property Name="NOMGRURAM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TBRAMOes" Relationship="Self.TBRAMO_IDGRUPGRA_FK" FromRole="TBGRUPRAMO" ToRole="TBRAMO" />
+        </EntityType>
+        <EntityType Name="TBMONEDA">
+          <Key>
+            <PropertyRef Name="CODMON" />
+          </Key>
+          <Property Name="CODMON" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMMON" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ACTIVO" Type="Int16" />
+        </EntityType>
+        <EntityType Name="TBOPORCOTIRAMO">
+          <Key>
+            <PropertyRef Name="IDOPORCOTIRAMO" />
+          </Key>
+          <Property Name="IDOPOCRECOT" Type="Int64" Nullable="false" />
+          <Property Name="IDRAM" Type="Int64" />
+          <Property Name="IDOPORCOTIRAMO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="TBOPORCREACOTI" Relationship="Self.TBOPORCOTIRAMO_FK" FromRole="TBOPORCOTIRAMO" ToRole="TBOPORCREACOTI" />
+        </EntityType>
+        <EntityType Name="TBOPORCREACOTI">
+          <Key>
+            <PropertyRef Name="IDOPOCRECOT" />
+          </Key>
+          <Property Name="IDOPOCRECOT" Type="Int64" Nullable="false" />
+          <Property Name="IDDEAPIP" Type="Int64" />
+          <Property Name="RUTCLIPIP" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="RAZSOCCLI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RUTCORPIP" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NOMRAZSOCCOT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="APECOR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RUTEJECOMCOT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NOMEJECOMCOT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="APEEJECOMCOT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EMAEJECOMCOT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="SUCCOT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GRURAMCOT" Type="Int64" />
+          <Property Name="DESOPOCOT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FECCRECOT" Type="DateTime" />
+          <Property Name="ESTOPOPIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDSTAPIP" Type="Int64" />
+          <Property Name="NOMCONCOR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EMAILCLI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TELCLI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBCOTIZACIONs" Relationship="Self.TBCOTIZACION_FK" FromRole="TBOPORCREACOTI" ToRole="TBCOTIZACION" />
+          <NavigationProperty Name="TBOPORCOTIRAMOes" Relationship="Self.TBOPORCOTIRAMO_FK" FromRole="TBOPORCREACOTI" ToRole="TBOPORCOTIRAMO" />
+        </EntityType>
+        <EntityType Name="TBRAMO">
+          <Key>
+            <PropertyRef Name="IDRAM" />
+          </Key>
+          <Property Name="IDRAM" Type="Int64" Nullable="false" />
+          <Property Name="CODRAM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOMRAM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDGRURAM" Type="Int64" Nullable="false" />
+          <Property Name="CODPIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBGRUPRAMO" Relationship="Self.TBRAMO_IDGRUPGRA_FK" FromRole="TBRAMO" ToRole="TBGRUPRAMO" />
+        </EntityType>
+        <EntityType Name="TBROL">
+          <Key>
+            <PropertyRef Name="IDROL" />
+          </Key>
+          <Property Name="IDROL" Type="Int64" Nullable="false" />
+          <Property Name="NOMROL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TBEJECUTIs" Relationship="Self.TBEJECUTI_IDROL_FK" FromRole="TBROL" ToRole="TBEJECUTI" />
+        </EntityType>
+        <EntityType Name="TBSUCURSA">
+          <Key>
+            <PropertyRef Name="CODSUC" />
+          </Key>
+          <Property Name="CODSUC" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESSUC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CODPIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBCOTIZACIONs" Relationship="Self.TBCOTIZACION_CODSUC_FK" FromRole="TBSUCURSA" ToRole="TBCOTIZACION" />
+        </EntityType>
+        <EntityType Name="TBTIPOOCUP">
+          <Key>
+            <PropertyRef Name="IDTIPOCU" />
+          </Key>
+          <Property Name="IDTIPOCU" Type="Int64" Nullable="false" />
+          <Property Name="NOMTIPOCU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DEL_TBEXCEPCIONES">
+          <Key>
+            <PropertyRef Name="IDEXC" />
+            <PropertyRef Name="IDTIPMOV" />
+          </Key>
+          <Property Name="IDEXC" Type="Int64" Nullable="false" />
+          <Property Name="IDTIPMOV" Type="Int64" Nullable="false" />
+          <Property Name="CODTIPERR" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="MEN" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="JSO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FECAUD" Type="DateTime" />
+          <Property Name="REP" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DEL_TBRESPUESTAAPI">
+          <Key>
+            <PropertyRef Name="IDRESAPI" />
+            <PropertyRef Name="IDTIPMOV" />
+            <PropertyRef Name="FECAUD" />
+          </Key>
+          <Property Name="IDRESAPI" Type="Int64" Nullable="false" />
+          <Property Name="IDTIPMOV" Type="Int64" Nullable="false" />
+          <Property Name="RESCOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VOUNUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GLOJSO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GLOJSOSAL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GLOJSOENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CODDOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FECAUD" Type="DateTime" Nullable="false" />
+          <Property Name="RESMES" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBCOTIZACIONUBIC">
+          <Key>
+            <PropertyRef Name="IDCOTUBI" />
+            <PropertyRef Name="IDCOT" />
+          </Key>
+          <Property Name="IDCOTUBI" Type="Int64" Nullable="false" />
+          <Property Name="IDCOT" Type="Int64" Nullable="false" />
+          <Property Name="DIRECCI" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DIRNRO" Type="Int64" />
+          <Property Name="IDREG" Type="Int64" />
+          <Property Name="IDCOMU" Type="Int64" />
+          <Property Name="IDMURO" Type="Int64" />
+          <Property Name="IDTECHO" Type="Int64" />
+          <Property Name="ANOCONSTRU" Type="Int64" />
+        </EntityType>
+        <EntityType Name="TBCOTRAMMAT">
+          <Key>
+            <PropertyRef Name="IDCOTRAMMAT" />
+            <PropertyRef Name="IDCOTRAM" />
+          </Key>
+          <Property Name="IDCOTRAMMAT" Type="Int64" Nullable="false" />
+          <Property Name="IDCOTRAM" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCOTRAMNOT">
+          <Key>
+            <PropertyRef Name="IDCOTRAMNOT" />
+            <PropertyRef Name="IDCOTRAM" />
+          </Key>
+          <Property Name="IDCOTRAMNOT" Type="Int64" Nullable="false" />
+          <Property Name="IDCOTRAM" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBCUESUBIC">
+          <Key>
+            <PropertyRef Name="IDCUE" />
+            <PropertyRef Name="IDUBI" />
+          </Key>
+          <Property Name="IDCUE" Type="Int64" Nullable="false" />
+          <Property Name="IDUBI" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBEXCELIBERESE">
+          <Key>
+            <PropertyRef Name="IDEXCLIBRES" />
+            <PropertyRef Name="RUTCOR" />
+            <PropertyRef Name="RUTCLI" />
+            <PropertyRef Name="IDGRURAM" />
+          </Key>
+          <Property Name="IDEXCLIBRES" Type="Int64" Nullable="false" />
+          <Property Name="RUTCOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RUTCLI" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDGRURAM" Type="Int64" Nullable="false" />
+          <Property Name="FECINI" Type="DateTime" Precision="6" />
+          <Property Name="FECFIN" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="TBFORMAPAGO">
+          <Key>
+            <PropertyRef Name="IDFORPAG" />
+            <PropertyRef Name="IDPLAPAG" />
+          </Key>
+          <Property Name="IDFORPAG" Type="Int64" Nullable="false" />
+          <Property Name="IDPLAPAG" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBHOMOCAMPPIPECOTIRESE">
+          <Key>
+            <PropertyRef Name="IDHOM" />
+          </Key>
+          <Property Name="IDHOM" Type="Int64" Nullable="false" />
+          <Property Name="IDPIP" Type="Int64" />
+          <Property Name="KEYPIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NAMPIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AMB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TIPUSO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOMCAMCOT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBHOMOCAMPVALOPIPE">
+          <Key>
+            <PropertyRef Name="IDVALCAMPIP" />
+          </Key>
+          <Property Name="IDVALCAMPIP" Type="Int64" Nullable="false" />
+          <Property Name="VALCAMPIP" Type="Int64" />
+          <Property Name="IDHOM" Type="Int64" />
+          <Property Name="VALCAMCOT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VALAGRCAMCOT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBITEM">
+          <Key>
+            <PropertyRef Name="IDITE" />
+            <PropertyRef Name="IDUBI" />
+          </Key>
+          <Property Name="IDITE" Type="Int64" Nullable="false" />
+          <Property Name="IDUBI" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBMONASEBA">
+          <Key>
+            <PropertyRef Name="IDMONASEBAS" />
+            <PropertyRef Name="IDUBI" />
+          </Key>
+          <Property Name="IDMONASEBAS" Type="Int64" Nullable="false" />
+          <Property Name="IDUBI" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBOCUPACI">
+          <Key>
+            <PropertyRef Name="IDOCUPACI" />
+            <PropertyRef Name="IDRAMO" />
+            <PropertyRef Name="IDTIPORIESGO" />
+            <PropertyRef Name="IDTIPOOCUPACI" />
+          </Key>
+          <Property Name="IDOCUPACI" Type="Int64" Nullable="false" />
+          <Property Name="IDRAMO" Type="Int64" Nullable="false" />
+          <Property Name="IDTIPORIESGO" Type="Int64" Nullable="false" />
+          <Property Name="IDTIPOOCUPACI" Type="Int64" Nullable="false" />
+          <Property Name="ACTIVID" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBOPORTUNIDAD">
+          <Key>
+            <PropertyRef Name="IDDEA" />
+            <PropertyRef Name="IDCOT" />
+          </Key>
+          <Property Name="IDDEA" Type="Int64" Nullable="false" />
+          <Property Name="IDCOT" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBOPORTUNRECIENT">
+          <Key>
+            <PropertyRef Name="IDOPOREC" />
+          </Key>
+          <Property Name="IDOPOREC" Type="Int64" Nullable="false" />
+          <Property Name="CAMPIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VALCAMPIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBPLANPAGO">
+          <Key>
+            <PropertyRef Name="IDPLAPAG" />
+          </Key>
+          <Property Name="IDPLAPAG" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBPRECUERAM">
+          <Key>
+            <PropertyRef Name="IDPRECUE" />
+            <PropertyRef Name="IDRAM" />
+          </Key>
+          <Property Name="IDPRECUE" Type="Int64" Nullable="false" />
+          <Property Name="IDRAM" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBRESERVA">
+          <Key>
+            <PropertyRef Name="IDRES" />
+            <PropertyRef Name="RUTCOR" />
+            <PropertyRef Name="RUTCLI" />
+            <PropertyRef Name="IDGRURAM" />
+          </Key>
+          <Property Name="IDRES" Type="Int64" Nullable="false" />
+          <Property Name="RUTCOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RUTCLI" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IDGRURAM" Type="Int64" Nullable="false" />
+          <Property Name="FECINI" Type="DateTime" Precision="6" />
+          <Property Name="FECFIN" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="TBTIPORy">
+          <Key>
+            <PropertyRef Name="IDTIPRIE" />
+            <PropertyRef Name="NOMTIPRIE" />
+          </Key>
+          <Property Name="IDTIPRIE" Type="Int64" Nullable="false" />
+          <Property Name="NOMTIPRIE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBUBICACION">
+          <Key>
+            <PropertyRef Name="IDUBI" />
+            <PropertyRef Name="IDCOTRAM" />
+          </Key>
+          <Property Name="IDUBI" Type="Int64" Nullable="false" />
+          <Property Name="IDCOTRAM" Type="Int64" Nullable="false" />
+        </EntityType>
+        <Association Name="TBCOTIZACION_IDBAN_FK">
+          <End Role="TBBANDERA" Type="Self.TBBANDERA" Multiplicity="0..1" />
+          <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBBANDERA">
+              <PropertyRef Name="IDBAN" />
+            </Principal>
+            <Dependent Role="TBCOTIZACION">
+              <PropertyRef Name="IDBAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBBITACORERRORES_IDERROR">
+          <End Role="TBERROR" Type="Self.TBERROR" Multiplicity="1" />
+          <End Role="TBBITACORERRORES" Type="Self.TBBITACORERRORE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBERROR">
+              <PropertyRef Name="IDERROR" />
+            </Principal>
+            <Dependent Role="TBBITACORERRORES">
+              <PropertyRef Name="IDERROR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK1_TBCOBERTUNOTAS_IDCOBASI">
+          <End Role="TBCOBASI" Type="Self.TBCOBASI" Multiplicity="1" />
+          <End Role="TBCOBERTUNOTAS" Type="Self.TBCOBERTUNOTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBCOBASI">
+              <PropertyRef Name="IDCOBASI" />
+            </Principal>
+            <Dependent Role="TBCOBERTUNOTAS">
+              <PropertyRef Name="IDCOBASI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBCOTIZACION_CODSUC_FK">
+          <End Role="TBSUCURSA" Type="Self.TBSUCURSA" Multiplicity="0..1" />
+          <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBSUCURSA">
+              <PropertyRef Name="CODSUC" />
+            </Principal>
+            <Dependent Role="TBCOTIZACION">
+              <PropertyRef Name="CODSUC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBCOTIZACION_FK">
+          <End Role="TBOPORCREACOTI" Type="Self.TBOPORCREACOTI" Multiplicity="1" />
+          <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBOPORCREACOTI">
+              <PropertyRef Name="IDOPOCRECOT" />
+            </Principal>
+            <Dependent Role="TBCOTIZACION">
+              <PropertyRef Name="IDOPOCRECOT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBEJECUTI_IDROL_FK">
+          <End Role="TBROL" Type="Self.TBROL" Multiplicity="1" />
+          <End Role="TBEJECUTI" Type="Self.TBEJECUTI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBROL">
+              <PropertyRef Name="IDROL" />
+            </Principal>
+            <Dependent Role="TBEJECUTI">
+              <PropertyRef Name="IDROL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBRAMO_IDGRUPGRA_FK">
+          <End Role="TBGRUPRAMO" Type="Self.TBGRUPRAMO" Multiplicity="1" />
+          <End Role="TBRAMO" Type="Self.TBRAMO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBGRUPRAMO">
+              <PropertyRef Name="IDGRURAM" />
+            </Principal>
+            <Dependent Role="TBRAMO">
+              <PropertyRef Name="IDGRURAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TBOPORCOTIRAMO_FK">
+          <End Role="TBOPORCREACOTI" Type="Self.TBOPORCREACOTI" Multiplicity="1" />
+          <End Role="TBOPORCOTIRAMO" Type="Self.TBOPORCOTIRAMO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBOPORCREACOTI">
+              <PropertyRef Name="IDOPOCRECOT" />
+            </Principal>
+            <Dependent Role="TBOPORCOTIRAMO">
+              <PropertyRef Name="IDOPOCRECOT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DEL_TBADMINISMOVIMIE" EntityType="Self.DEL_TBADMINISMOVIMIE" />
+          <EntitySet Name="TBBANDERAs" EntityType="Self.TBBANDERA" />
+          <EntitySet Name="TBBITACORERRORES" EntityType="Self.TBBITACORERRORE" />
+          <EntitySet Name="TBCLIENTEs" EntityType="Self.TBCLIENTE" />
+          <EntitySet Name="TBCOBASIs" EntityType="Self.TBCOBASI" />
+          <EntitySet Name="TBCOBERTUNOTAS" EntityType="Self.TBCOBERTUNOTA" />
+          <EntitySet Name="TBCOMPANIs" EntityType="Self.TBCOMPANI" />
+          <EntitySet Name="TBCORREDORs" EntityType="Self.TBCORREDOR" />
+          <EntitySet Name="TBCOTIZACIONs" EntityType="Self.TBCOTIZACION" />
+          <EntitySet Name="TBEJECUTIs" EntityType="Self.TBEJECUTI" />
+          <EntitySet Name="TBERRORs" EntityType="Self.TBERROR" />
+          <EntitySet Name="TBGRUPRAMOes" EntityType="Self.TBGRUPRAMO" />
+          <EntitySet Name="TBMONEDAs" EntityType="Self.TBMONEDA" />
+          <EntitySet Name="TBOPORCOTIRAMOes" EntityType="Self.TBOPORCOTIRAMO" />
+          <EntitySet Name="TBOPORCREACOTIs" EntityType="Self.TBOPORCREACOTI" />
+          <EntitySet Name="TBRAMOes" EntityType="Self.TBRAMO" />
+          <EntitySet Name="TBROLs" EntityType="Self.TBROL" />
+          <EntitySet Name="TBSUCURSAs" EntityType="Self.TBSUCURSA" />
+          <EntitySet Name="TBTIPOOCUPs" EntityType="Self.TBTIPOOCUP" />
+          <EntitySet Name="DEL_TBEXCEPCIONES" EntityType="Self.DEL_TBEXCEPCIONES" />
+          <EntitySet Name="DEL_TBRESPUESTAAPI" EntityType="Self.DEL_TBRESPUESTAAPI" />
+          <EntitySet Name="TBCOTIZACIONUBICs" EntityType="Self.TBCOTIZACIONUBIC" />
+          <EntitySet Name="TBCOTRAMMATs" EntityType="Self.TBCOTRAMMAT" />
+          <EntitySet Name="TBCOTRAMNOTs" EntityType="Self.TBCOTRAMNOT" />
+          <EntitySet Name="TBCUESUBICs" EntityType="Self.TBCUESUBIC" />
+          <EntitySet Name="TBEXCELIBERESEs" EntityType="Self.TBEXCELIBERESE" />
+          <EntitySet Name="TBFORMAPAGOes" EntityType="Self.TBFORMAPAGO" />
+          <EntitySet Name="TBHOMOCAMPPIPECOTIRESEs" EntityType="Self.TBHOMOCAMPPIPECOTIRESE" />
+          <EntitySet Name="TBHOMOCAMPVALOPIPEs" EntityType="Self.TBHOMOCAMPVALOPIPE" />
+          <EntitySet Name="TBITEMS" EntityType="Self.TBITEM" />
+          <EntitySet Name="TBMONASEBAS" EntityType="Self.TBMONASEBA" />
+          <EntitySet Name="TBOCUPACIs" EntityType="Self.TBOCUPACI" />
+          <EntitySet Name="TBOPORTUNIDADs" EntityType="Self.TBOPORTUNIDAD" />
+          <EntitySet Name="TBOPORTUNRECIENTs" EntityType="Self.TBOPORTUNRECIENT" />
+          <EntitySet Name="TBPLANPAGOes" EntityType="Self.TBPLANPAGO" />
+          <EntitySet Name="TBPRECUERAMs" EntityType="Self.TBPRECUERAM" />
+          <EntitySet Name="TBRESERVAs" EntityType="Self.TBRESERVA" />
+          <EntitySet Name="TBTIPORIES" EntityType="Self.TBTIPORy" />
+          <EntitySet Name="TBUBICACIONs" EntityType="Self.TBUBICACION" />
+          <AssociationSet Name="TBCOTIZACION_IDBAN_FK" Association="Self.TBCOTIZACION_IDBAN_FK">
+            <End Role="TBBANDERA" EntitySet="TBBANDERAs" />
+            <End Role="TBCOTIZACION" EntitySet="TBCOTIZACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBBITACORERRORES_IDERROR" Association="Self.FK_TBBITACORERRORES_IDERROR">
+            <End Role="TBERROR" EntitySet="TBERRORs" />
+            <End Role="TBBITACORERRORES" EntitySet="TBBITACORERRORES" />
+          </AssociationSet>
+          <AssociationSet Name="FK1_TBCOBERTUNOTAS_IDCOBASI" Association="Self.FK1_TBCOBERTUNOTAS_IDCOBASI">
+            <End Role="TBCOBASI" EntitySet="TBCOBASIs" />
+            <End Role="TBCOBERTUNOTAS" EntitySet="TBCOBERTUNOTAS" />
+          </AssociationSet>
+          <AssociationSet Name="TBCOTIZACION_CODSUC_FK" Association="Self.TBCOTIZACION_CODSUC_FK">
+            <End Role="TBSUCURSA" EntitySet="TBSUCURSAs" />
+            <End Role="TBCOTIZACION" EntitySet="TBCOTIZACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="TBCOTIZACION_FK" Association="Self.TBCOTIZACION_FK">
+            <End Role="TBOPORCREACOTI" EntitySet="TBOPORCREACOTIs" />
+            <End Role="TBCOTIZACION" EntitySet="TBCOTIZACIONs" />
+          </AssociationSet>
+          <AssociationSet Name="TBEJECUTI_IDROL_FK" Association="Self.TBEJECUTI_IDROL_FK">
+            <End Role="TBROL" EntitySet="TBROLs" />
+            <End Role="TBEJECUTI" EntitySet="TBEJECUTIs" />
+          </AssociationSet>
+          <AssociationSet Name="TBRAMO_IDGRUPGRA_FK" Association="Self.TBRAMO_IDGRUPGRA_FK">
+            <End Role="TBGRUPRAMO" EntitySet="TBGRUPRAMOes" />
+            <End Role="TBRAMO" EntitySet="TBRAMOes" />
+          </AssociationSet>
+          <AssociationSet Name="TBOPORCOTIRAMO_FK" Association="Self.TBOPORCOTIRAMO_FK">
+            <End Role="TBOPORCREACOTI" EntitySet="TBOPORCREACOTIs" />
+            <End Role="TBOPORCOTIRAMO" EntitySet="TBOPORCOTIRAMOes" />
+          </AssociationSet>
+          <EntitySet Name="DEL_TBCOTIZACIONRAMO" EntityType="Model.DEL_TBCOTIZACIONRAMO" />
+          <EntitySet Name="TBCOMUNAs" EntityType="Model.TBCOMUNA" />
+          <EntitySet Name="TBREGIONs" EntityType="Model.TBREGION" />
+          <EntitySet Name="TBTOOLTIPs" EntityType="Model.TBTOOLTIP" />
+          <AssociationSet Name="TBCOTIZACION_EJECOM_FK" Association="Model.TBCOTIZACION_EJECOM_FK">
+            <End Role="TBEJECUTI" EntitySet="TBEJECUTIs" />
+            <End Role="TBCOTIZACION" EntitySet="TBCOTIZACIONs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DEL_TBCOTIZACIONRAMO">
+          <Key>
+            <PropertyRef Name="IDCOTRAM" />
+            <PropertyRef Name="IDCOT" />
+            <PropertyRef Name="IDRAM" />
+            <PropertyRef Name="ACT" />
+          </Key>
+          <Property Name="IDCOTRAM" Type="Int64" Nullable="false" />
+          <Property Name="IDCOT" Type="Int64" Nullable="false" />
+          <Property Name="IDRAM" Type="Int64" Nullable="false" />
+          <Property Name="ACT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBCOMUNA">
+          <Key>
+            <PropertyRef Name="CODCOMUNA" />
+            <PropertyRef Name="CODREGION" />
+            <PropertyRef Name="NOMCOMUNA" />
+          </Key>
+          <Property Name="CODCOMUNA" Type="Int64" Nullable="false" />
+          <Property Name="CODREGION" Type="Int64" Nullable="false" />
+          <Property Name="NOMCOMUNA" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBREGION">
+          <Key>
+            <PropertyRef Name="CODREGION" />
+            <PropertyRef Name="NOMREGION" />
+          </Key>
+          <Property Name="CODREGION" Type="Int64" Nullable="false" />
+          <Property Name="NOMREGION" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBTOOLTIP">
+          <Key>
+            <PropertyRef Name="CODTOOLTIP" />
+            <PropertyRef Name="NOMTOOLTIP" />
+          </Key>
+          <Property Name="CODTOOLTIP" Type="Int64" Nullable="false" />
+          <Property Name="NOMTOOLTIP" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="TBCOTIZACION_EJECOM_FK">
+          <End Type="Model.TBEJECUTI" Role="TBEJECUTI" Multiplicity="0..1" />
+          <End Type="Model.TBCOTIZACION" Role="TBCOTIZACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBEJECUTI">
+              <PropertyRef Name="IDEJECUTI" />
+            </Principal>
+            <Dependent Role="TBCOTIZACION">
+              <PropertyRef Name="IDEJECOM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="DEL_TBADMINISMOVIMIE">
+            <EntityTypeMapping TypeName="Model.DEL_TBADMINISMOVIMIE">
+              <MappingFragment StoreEntitySet="DEL_TBADMINISMOVIMIE">
+                <ScalarProperty Name="IDMOV" ColumnName="IDMOV" />
+                <ScalarProperty Name="NOM" ColumnName="NOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBBANDERAs">
+            <EntityTypeMapping TypeName="Model.TBBANDERA">
+              <MappingFragment StoreEntitySet="TBBANDERA">
+                <ScalarProperty Name="IDBAN" ColumnName="IDBAN" />
+                <ScalarProperty Name="NOMBAN" ColumnName="NOMBAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBBITACORERRORES">
+            <EntityTypeMapping TypeName="Model.TBBITACORERRORE">
+              <MappingFragment StoreEntitySet="TBBITACORERRORES">
+                <ScalarProperty Name="IDBITACORERRORES" ColumnName="IDBITACORERRORES" />
+                <ScalarProperty Name="FECHAPETICIO" ColumnName="FECHAPETICIO" />
+                <ScalarProperty Name="FECHARESPUES" ColumnName="FECHARESPUES" />
+                <ScalarProperty Name="SISTEMA" ColumnName="SISTEMA" />
+                <ScalarProperty Name="ACCION" ColumnName="ACCION" />
+                <ScalarProperty Name="GRAVEDA" ColumnName="GRAVEDA" />
+                <ScalarProperty Name="MODULOS" ColumnName="MODULOS" />
+                <ScalarProperty Name="CAMPO" ColumnName="CAMPO" />
+                <ScalarProperty Name="IDERROR" ColumnName="IDERROR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCLIENTEs">
+            <EntityTypeMapping TypeName="Model.TBCLIENTE">
+              <MappingFragment StoreEntitySet="TBCLIENTE">
+                <ScalarProperty Name="RUTCLI" ColumnName="RUTCLI" />
+                <ScalarProperty Name="NOMCLI" ColumnName="NOMCLI" />
+                <ScalarProperty Name="EMACLI" ColumnName="EMACLI" />
+                <ScalarProperty Name="DIRCLI" ColumnName="DIRCLI" />
+                <ScalarProperty Name="TELCLI" ColumnName="TELCLI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCOBASIs">
+            <EntityTypeMapping TypeName="Model.TBCOBASI">
+              <MappingFragment StoreEntitySet="TBCOBASI">
+                <ScalarProperty Name="IDCOBASI" ColumnName="IDCOBASI" />
+                <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+                <ScalarProperty Name="MONASE" ColumnName="MONASE" />
+                <ScalarProperty Name="PRIAFE" ColumnName="PRIAFE" />
+                <ScalarProperty Name="PRIEXC" ColumnName="PRIEXC" />
+                <ScalarProperty Name="COM" ColumnName="COM" />
+                <ScalarProperty Name="LIM" ColumnName="LIM" />
+                <ScalarProperty Name="SUBLIM" ColumnName="SUBLIM" />
+                <ScalarProperty Name="DED" ColumnName="DED" />
+                <ScalarProperty Name="PRINET" ColumnName="PRINET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCOBERTUNOTAS">
+            <EntityTypeMapping TypeName="Model.TBCOBERTUNOTA">
+              <MappingFragment StoreEntitySet="TBCOBERTUNOTAS">
+                <ScalarProperty Name="IDCOBNOT" ColumnName="IDCOBNOT" />
+                <ScalarProperty Name="IDCOBASI" ColumnName="IDCOBASI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCOMPANIs">
+            <EntityTypeMapping TypeName="Model.TBCOMPANI">
+              <MappingFragment StoreEntitySet="TBCOMPANI">
+                <ScalarProperty Name="CODCOM" ColumnName="CODCOM" />
+                <ScalarProperty Name="NOMCOM" ColumnName="NOMCOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCORREDORs">
+            <EntityTypeMapping TypeName="Model.TBCORREDOR">
+              <MappingFragment StoreEntitySet="TBCORREDOR">
+                <ScalarProperty Name="RUTCOR" ColumnName="RUTCOR" />
+                <ScalarProperty Name="NOMCOR" ColumnName="NOMCOR" />
+                <ScalarProperty Name="EMACOR" ColumnName="EMACOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCOTIZACIONs">
+            <EntityTypeMapping TypeName="Model.TBCOTIZACION">
+              <MappingFragment StoreEntitySet="TBCOTIZACION">
+                <ScalarProperty Name="IDSUSCRIP" ColumnName="IDSUSCRIP" />
+                <ScalarProperty Name="IDCOT" ColumnName="IDCOT" />
+                <ScalarProperty Name="IDOPOCRECOT" ColumnName="IDOPOCRECOT" />
+                <ScalarProperty Name="IDRES" ColumnName="IDRES" />
+                <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+                <ScalarProperty Name="IDBAN" ColumnName="IDBAN" />
+                <ScalarProperty Name="IDEJECOM" ColumnName="IDEJECOM" />
+                <ScalarProperty Name="CODSUC" ColumnName="CODSUC" />
+                <ScalarProperty Name="ACTIVID" ColumnName="ACTIVID" />
+                <ScalarProperty Name="CODMON" ColumnName="CODMON" />
+                <ScalarProperty Name="CODCOM" ColumnName="CODCOM" />
+                <ScalarProperty Name="FECPRESENT" ColumnName="FECPRESENT" />
+                <ScalarProperty Name="FECEPCPOL" ColumnName="FECEPCPOL" />
+                <ScalarProperty Name="LICITAC" ColumnName="LICITAC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBEJECUTIs">
+            <EntityTypeMapping TypeName="Model.TBEJECUTI">
+              <MappingFragment StoreEntitySet="TBEJECUTI">
+                <ScalarProperty Name="IDEJECUTI" ColumnName="IDEJECUTI" />
+                <ScalarProperty Name="RUTEJECUTI" ColumnName="RUTEJECUTI" />
+                <ScalarProperty Name="NOMBREEJECUTI" ColumnName="NOMBREEJECUTI" />
+                <ScalarProperty Name="APELLIDEJECUTI" ColumnName="APELLIDEJECUTI" />
+                <ScalarProperty Name="EMAILEJECUTI" ColumnName="EMAILEJECUTI" />
+                <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBERRORs">
+            <EntityTypeMapping TypeName="Model.TBERROR">
+              <MappingFragment StoreEntitySet="TBERROR">
+                <ScalarProperty Name="IDERROR" ColumnName="IDERROR" />
+                <ScalarProperty Name="CODIGOERROR" ColumnName="CODIGOERROR" />
+                <ScalarProperty Name="TIPOERROR" ColumnName="TIPOERROR" />
+                <ScalarProperty Name="MENSAJEDELERROR" ColumnName="MENSAJEDELERROR" />
+                <ScalarProperty Name="ERRORSISTEMA" ColumnName="ERRORSISTEMA" />
+                <ScalarProperty Name="FUENTEORIGEN" ColumnName="FUENTEORIGEN" />
+                <ScalarProperty Name="METODODELERROR" ColumnName="METODODELERROR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBGRUPRAMOes">
+            <EntityTypeMapping TypeName="Model.TBGRUPRAMO">
+              <MappingFragment StoreEntitySet="TBGRUPRAMO">
+                <ScalarProperty Name="IDGRURAM" ColumnName="IDGRURAM" />
+                <ScalarProperty Name="NOMGRURAM" ColumnName="NOMGRURAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBMONEDAs">
+            <EntityTypeMapping TypeName="Model.TBMONEDA">
+              <MappingFragment StoreEntitySet="TBMONEDA">
+                <ScalarProperty Name="CODMON" ColumnName="CODMON" />
+                <ScalarProperty Name="NOMMON" ColumnName="NOMMON" />
+                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBOPORCOTIRAMOes">
+            <EntityTypeMapping TypeName="Model.TBOPORCOTIRAMO">
+              <MappingFragment StoreEntitySet="TBOPORCOTIRAMO">
+                <ScalarProperty Name="IDOPOCRECOT" ColumnName="IDOPOCRECOT" />
+                <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+                <ScalarProperty Name="IDOPORCOTIRAMO" ColumnName="IDOPORCOTIRAMO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBOPORCREACOTIs">
+            <EntityTypeMapping TypeName="Model.TBOPORCREACOTI">
+              <MappingFragment StoreEntitySet="TBOPORCREACOTI">
+                <ScalarProperty Name="IDOPOCRECOT" ColumnName="IDOPOCRECOT" />
+                <ScalarProperty Name="IDDEAPIP" ColumnName="IDDEAPIP" />
+                <ScalarProperty Name="RUTCLIPIP" ColumnName="RUTCLIPIP" />
+                <ScalarProperty Name="RAZSOCCLI" ColumnName="RAZSOCCLI" />
+                <ScalarProperty Name="RUTCORPIP" ColumnName="RUTCORPIP" />
+                <ScalarProperty Name="NOMRAZSOCCOT" ColumnName="NOMRAZSOCCOT" />
+                <ScalarProperty Name="APECOR" ColumnName="APECOR" />
+                <ScalarProperty Name="RUTEJECOMCOT" ColumnName="RUTEJECOMCOT" />
+                <ScalarProperty Name="NOMEJECOMCOT" ColumnName="NOMEJECOMCOT" />
+                <ScalarProperty Name="APEEJECOMCOT" ColumnName="APEEJECOMCOT" />
+                <ScalarProperty Name="EMAEJECOMCOT" ColumnName="EMAEJECOMCOT" />
+                <ScalarProperty Name="SUCCOT" ColumnName="SUCCOT" />
+                <ScalarProperty Name="GRURAMCOT" ColumnName="GRURAMCOT" />
+                <ScalarProperty Name="DESOPOCOT" ColumnName="DESOPOCOT" />
+                <ScalarProperty Name="FECCRECOT" ColumnName="FECCRECOT" />
+                <ScalarProperty Name="ESTOPOPIP" ColumnName="ESTOPOPIP" />
+                <ScalarProperty Name="IDSTAPIP" ColumnName="IDSTAPIP" />
+                <ScalarProperty Name="NOMCONCOR" ColumnName="NOMCONCOR" />
+                <ScalarProperty Name="EMAILCLI" ColumnName="EMAILCLI" />
+                <ScalarProperty Name="TELCLI" ColumnName="TELCLI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBRAMOes">
+            <EntityTypeMapping TypeName="Model.TBRAMO">
+              <MappingFragment StoreEntitySet="TBRAMO">
+                <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+                <ScalarProperty Name="CODRAM" ColumnName="CODRAM" />
+                <ScalarProperty Name="NOMRAM" ColumnName="NOMRAM" />
+                <ScalarProperty Name="IDGRURAM" ColumnName="IDGRURAM" />
+                <ScalarProperty Name="CODPIP" ColumnName="CODPIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBROLs">
+            <EntityTypeMapping TypeName="Model.TBROL">
+              <MappingFragment StoreEntitySet="TBROL">
+                <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+                <ScalarProperty Name="NOMROL" ColumnName="NOMROL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBSUCURSAs">
+            <EntityTypeMapping TypeName="Model.TBSUCURSA">
+              <MappingFragment StoreEntitySet="TBSUCURSA">
+                <ScalarProperty Name="CODSUC" ColumnName="CODSUC" />
+                <ScalarProperty Name="DESSUC" ColumnName="DESSUC" />
+                <ScalarProperty Name="CODPIP" ColumnName="CODPIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBTIPOOCUPs">
+            <EntityTypeMapping TypeName="Model.TBTIPOOCUP">
+              <MappingFragment StoreEntitySet="TBTIPOOCUP">
+                <ScalarProperty Name="IDTIPOCU" ColumnName="IDTIPOCU" />
+                <ScalarProperty Name="NOMTIPOCU" ColumnName="NOMTIPOCU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEL_TBEXCEPCIONES">
+            <EntityTypeMapping TypeName="Model.DEL_TBEXCEPCIONES">
+              <MappingFragment StoreEntitySet="DEL_TBEXCEPCIONES">
+                <ScalarProperty Name="IDEXC" ColumnName="IDEXC" />
+                <ScalarProperty Name="IDTIPMOV" ColumnName="IDTIPMOV" />
+                <ScalarProperty Name="CODTIPERR" ColumnName="CODTIPERR" />
+                <ScalarProperty Name="MEN" ColumnName="MEN" />
+                <ScalarProperty Name="JSO" ColumnName="JSO" />
+                <ScalarProperty Name="FECAUD" ColumnName="FECAUD" />
+                <ScalarProperty Name="REP" ColumnName="REP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEL_TBRESPUESTAAPI">
+            <EntityTypeMapping TypeName="Model.DEL_TBRESPUESTAAPI">
+              <MappingFragment StoreEntitySet="DEL_TBRESPUESTAAPI">
+                <ScalarProperty Name="IDRESAPI" ColumnName="IDRESAPI" />
+                <ScalarProperty Name="IDTIPMOV" ColumnName="IDTIPMOV" />
+                <ScalarProperty Name="RESCOD" ColumnName="RESCOD" />
+                <ScalarProperty Name="VOUNUM" ColumnName="VOUNUM" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="GLOJSO" ColumnName="GLOJSO" />
+                <ScalarProperty Name="GLOJSOSAL" ColumnName="GLOJSOSAL" />
+                <ScalarProperty Name="GLOJSOENT" ColumnName="GLOJSOENT" />
+                <ScalarProperty Name="CODDOC" ColumnName="CODDOC" />
+                <ScalarProperty Name="FECAUD" ColumnName="FECAUD" />
+                <ScalarProperty Name="RESMES" ColumnName="RESMES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCOTIZACIONUBICs">
+            <EntityTypeMapping TypeName="Model.TBCOTIZACIONUBIC">
+              <MappingFragment StoreEntitySet="TBCOTIZACIONUBIC">
+                <ScalarProperty Name="IDCOTUBI" ColumnName="IDCOTUBI" />
+                <ScalarProperty Name="IDCOT" ColumnName="IDCOT" />
+                <ScalarProperty Name="DIRECCI" ColumnName="DIRECCI" />
+                <ScalarProperty Name="DIRNRO" ColumnName="DIRNRO" />
+                <ScalarProperty Name="IDREG" ColumnName="IDREG" />
+                <ScalarProperty Name="IDCOMU" ColumnName="IDCOMU" />
+                <ScalarProperty Name="IDMURO" ColumnName="IDMURO" />
+                <ScalarProperty Name="IDTECHO" ColumnName="IDTECHO" />
+                <ScalarProperty Name="ANOCONSTRU" ColumnName="ANOCONSTRU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCOTRAMMATs">
+            <EntityTypeMapping TypeName="Model.TBCOTRAMMAT">
+              <MappingFragment StoreEntitySet="TBCOTRAMMAT">
+                <ScalarProperty Name="IDCOTRAMMAT" ColumnName="IDCOTRAMMAT" />
+                <ScalarProperty Name="IDCOTRAM" ColumnName="IDCOTRAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCOTRAMNOTs">
+            <EntityTypeMapping TypeName="Model.TBCOTRAMNOT">
+              <MappingFragment StoreEntitySet="TBCOTRAMNOT">
+                <ScalarProperty Name="IDCOTRAMNOT" ColumnName="IDCOTRAMNOT" />
+                <ScalarProperty Name="IDCOTRAM" ColumnName="IDCOTRAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCUESUBICs">
+            <EntityTypeMapping TypeName="Model.TBCUESUBIC">
+              <MappingFragment StoreEntitySet="TBCUESUBIC">
+                <ScalarProperty Name="IDCUE" ColumnName="IDCUE" />
+                <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBEXCELIBERESEs">
+            <EntityTypeMapping TypeName="Model.TBEXCELIBERESE">
+              <MappingFragment StoreEntitySet="TBEXCELIBERESE">
+                <ScalarProperty Name="IDEXCLIBRES" ColumnName="IDEXCLIBRES" />
+                <ScalarProperty Name="RUTCOR" ColumnName="RUTCOR" />
+                <ScalarProperty Name="RUTCLI" ColumnName="RUTCLI" />
+                <ScalarProperty Name="IDGRURAM" ColumnName="IDGRURAM" />
+                <ScalarProperty Name="FECINI" ColumnName="FECINI" />
+                <ScalarProperty Name="FECFIN" ColumnName="FECFIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBFORMAPAGOes">
+            <EntityTypeMapping TypeName="Model.TBFORMAPAGO">
+              <MappingFragment StoreEntitySet="TBFORMAPAGO">
+                <ScalarProperty Name="IDFORPAG" ColumnName="IDFORPAG" />
+                <ScalarProperty Name="IDPLAPAG" ColumnName="IDPLAPAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBHOMOCAMPPIPECOTIRESEs">
+            <EntityTypeMapping TypeName="Model.TBHOMOCAMPPIPECOTIRESE">
+              <MappingFragment StoreEntitySet="TBHOMOCAMPPIPECOTIRESE">
+                <ScalarProperty Name="IDHOM" ColumnName="IDHOM" />
+                <ScalarProperty Name="IDPIP" ColumnName="IDPIP" />
+                <ScalarProperty Name="KEYPIP" ColumnName="KEYPIP" />
+                <ScalarProperty Name="NAMPIP" ColumnName="NAMPIP" />
+                <ScalarProperty Name="AMB" ColumnName="AMB" />
+                <ScalarProperty Name="TIPUSO" ColumnName="TIPUSO" />
+                <ScalarProperty Name="NOMCAMCOT" ColumnName="NOMCAMCOT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBHOMOCAMPVALOPIPEs">
+            <EntityTypeMapping TypeName="Model.TBHOMOCAMPVALOPIPE">
+              <MappingFragment StoreEntitySet="TBHOMOCAMPVALOPIPE">
+                <ScalarProperty Name="IDVALCAMPIP" ColumnName="IDVALCAMPIP" />
+                <ScalarProperty Name="VALCAMPIP" ColumnName="VALCAMPIP" />
+                <ScalarProperty Name="IDHOM" ColumnName="IDHOM" />
+                <ScalarProperty Name="VALCAMCOT" ColumnName="VALCAMCOT" />
+                <ScalarProperty Name="VALAGRCAMCOT" ColumnName="VALAGRCAMCOT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBITEMS">
+            <EntityTypeMapping TypeName="Model.TBITEM">
+              <MappingFragment StoreEntitySet="TBITEMS">
+                <ScalarProperty Name="IDITE" ColumnName="IDITE" />
+                <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBMONASEBAS">
+            <EntityTypeMapping TypeName="Model.TBMONASEBA">
+              <MappingFragment StoreEntitySet="TBMONASEBAS">
+                <ScalarProperty Name="IDMONASEBAS" ColumnName="IDMONASEBAS" />
+                <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBOCUPACIs">
+            <EntityTypeMapping TypeName="Model.TBOCUPACI">
+              <MappingFragment StoreEntitySet="TBOCUPACI">
+                <ScalarProperty Name="IDOCUPACI" ColumnName="IDOCUPACI" />
+                <ScalarProperty Name="IDRAMO" ColumnName="IDRAMO" />
+                <ScalarProperty Name="IDTIPORIESGO" ColumnName="IDTIPORIESGO" />
+                <ScalarProperty Name="IDTIPOOCUPACI" ColumnName="IDTIPOOCUPACI" />
+                <ScalarProperty Name="ACTIVID" ColumnName="ACTIVID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBOPORTUNIDADs">
+            <EntityTypeMapping TypeName="Model.TBOPORTUNIDAD">
+              <MappingFragment StoreEntitySet="TBOPORTUNIDAD">
+                <ScalarProperty Name="IDDEA" ColumnName="IDDEA" />
+                <ScalarProperty Name="IDCOT" ColumnName="IDCOT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBOPORTUNRECIENTs">
+            <EntityTypeMapping TypeName="Model.TBOPORTUNRECIENT">
+              <MappingFragment StoreEntitySet="TBOPORTUNRECIENT">
+                <ScalarProperty Name="IDOPOREC" ColumnName="IDOPOREC" />
+                <ScalarProperty Name="CAMPIP" ColumnName="CAMPIP" />
+                <ScalarProperty Name="VALCAMPIP" ColumnName="VALCAMPIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBPLANPAGOes">
+            <EntityTypeMapping TypeName="Model.TBPLANPAGO">
+              <MappingFragment StoreEntitySet="TBPLANPAGO">
+                <ScalarProperty Name="IDPLAPAG" ColumnName="IDPLAPAG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBPRECUERAMs">
+            <EntityTypeMapping TypeName="Model.TBPRECUERAM">
+              <MappingFragment StoreEntitySet="TBPRECUERAM">
+                <ScalarProperty Name="IDPRECUE" ColumnName="IDPRECUE" />
+                <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBRESERVAs">
+            <EntityTypeMapping TypeName="Model.TBRESERVA">
+              <MappingFragment StoreEntitySet="TBRESERVA">
+                <ScalarProperty Name="IDRES" ColumnName="IDRES" />
+                <ScalarProperty Name="RUTCOR" ColumnName="RUTCOR" />
+                <ScalarProperty Name="RUTCLI" ColumnName="RUTCLI" />
+                <ScalarProperty Name="IDGRURAM" ColumnName="IDGRURAM" />
+                <ScalarProperty Name="FECINI" ColumnName="FECINI" />
+                <ScalarProperty Name="FECFIN" ColumnName="FECFIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBTIPORIES">
+            <EntityTypeMapping TypeName="Model.TBTIPORy">
+              <MappingFragment StoreEntitySet="TBTIPORIES">
+                <ScalarProperty Name="IDTIPRIE" ColumnName="IDTIPRIE" />
+                <ScalarProperty Name="NOMTIPRIE" ColumnName="NOMTIPRIE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBUBICACIONs">
+            <EntityTypeMapping TypeName="Model.TBUBICACION">
+              <MappingFragment StoreEntitySet="TBUBICACION">
+                <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+                <ScalarProperty Name="IDCOTRAM" ColumnName="IDCOTRAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEL_TBCOTIZACIONRAMO">
+            <EntityTypeMapping TypeName="Model.DEL_TBCOTIZACIONRAMO">
+              <MappingFragment StoreEntitySet="DEL_TBCOTIZACIONRAMO">
+                <ScalarProperty Name="ACT" ColumnName="ACT" />
+                <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+                <ScalarProperty Name="IDCOT" ColumnName="IDCOT" />
+                <ScalarProperty Name="IDCOTRAM" ColumnName="IDCOTRAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBCOMUNAs">
+            <EntityTypeMapping TypeName="Model.TBCOMUNA">
+              <MappingFragment StoreEntitySet="TBCOMUNA">
+                <ScalarProperty Name="NOMCOMUNA" ColumnName="NOMCOMUNA" />
+                <ScalarProperty Name="CODREGION" ColumnName="CODREGION" />
+                <ScalarProperty Name="CODCOMUNA" ColumnName="CODCOMUNA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBREGIONs">
+            <EntityTypeMapping TypeName="Model.TBREGION">
+              <MappingFragment StoreEntitySet="TBREGION">
+                <ScalarProperty Name="NOMREGION" ColumnName="NOMREGION" />
+                <ScalarProperty Name="CODREGION" ColumnName="CODREGION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBTOOLTIPs">
+            <EntityTypeMapping TypeName="Model.TBTOOLTIP">
+              <MappingFragment StoreEntitySet="TBTOOLTIP">
+                <ScalarProperty Name="NOMTOOLTIP" ColumnName="NOMTOOLTIP" />
+                <ScalarProperty Name="CODTOOLTIP" ColumnName="CODTOOLTIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

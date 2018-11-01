@@ -1,0 +1,33 @@
+<h1>{{ title }}</h1>
+
+<p>Bandeja de Entrada de Cotizaciones</p>
+
+<p *ngIf="!lstEje"><em>Cargando...</em></p>
+
+<!--lstEje.error
+lstEje.object_or_array
+lstEje.error_info
+lstEje.validate-->
+
+<table class='table' *ngIf="lstEje">
+    <thead>
+        <tr>
+            <th>Id Ejecutivo</th>
+            <th>Rut </th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let eje of lstEje">
+            <td>{{ eje.error}}</td>
+            <td>{{ eje.object_or_array}}</td>
+            <td>{{ eje.error_info}}</td>
+            <td>{{ eje.validate}}</td> 
+            <!--<td>
+                <a [routerLink]="['/BandejaEntrada/Delete/', emp.id]">Edit</a> |
+                <a [routerLink]="" (click)="delete(emp.id)">Delete</a>
+            </td>-->
+        </tr>
+    </tbody>
+</table>

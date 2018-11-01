@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="DEL_TBADMINISMOVIMIE">
+      <EntityTypeMapping TypeName="Model.DEL_TBADMINISMOVIMIE">
+        <MappingFragment StoreEntitySet="DEL_TBADMINISMOVIMIE">
+          <ScalarProperty Name="IDMOV" ColumnName="IDMOV" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBBANDERAs">
+      <EntityTypeMapping TypeName="Model.TBBANDERA">
+        <MappingFragment StoreEntitySet="TBBANDERA">
+          <ScalarProperty Name="IDBAN" ColumnName="IDBAN" />
+          <ScalarProperty Name="NOMBAN" ColumnName="NOMBAN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBBITACORERRORES">
+      <EntityTypeMapping TypeName="Model.TBBITACORERRORE">
+        <MappingFragment StoreEntitySet="TBBITACORERRORES">
+          <ScalarProperty Name="IDBITACORERRORES" ColumnName="IDBITACORERRORES" />
+          <ScalarProperty Name="FECHAPETICIO" ColumnName="FECHAPETICIO" />
+          <ScalarProperty Name="FECHARESPUES" ColumnName="FECHARESPUES" />
+          <ScalarProperty Name="SISTEMA" ColumnName="SISTEMA" />
+          <ScalarProperty Name="ACCION" ColumnName="ACCION" />
+          <ScalarProperty Name="GRAVEDA" ColumnName="GRAVEDA" />
+          <ScalarProperty Name="MODULOS" ColumnName="MODULOS" />
+          <ScalarProperty Name="CAMPO" ColumnName="CAMPO" />
+          <ScalarProperty Name="IDERROR" ColumnName="IDERROR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCLIENTEs">
+      <EntityTypeMapping TypeName="Model.TBCLIENTE">
+        <MappingFragment StoreEntitySet="TBCLIENTE">
+          <ScalarProperty Name="RUTCLI" ColumnName="RUTCLI" />
+          <ScalarProperty Name="NOMCLI" ColumnName="NOMCLI" />
+          <ScalarProperty Name="EMACLI" ColumnName="EMACLI" />
+          <ScalarProperty Name="DIRCLI" ColumnName="DIRCLI" />
+          <ScalarProperty Name="TELCLI" ColumnName="TELCLI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOBASIs">
+      <EntityTypeMapping TypeName="Model.TBCOBASI">
+        <MappingFragment StoreEntitySet="TBCOBASI">
+          <ScalarProperty Name="IDCOBASI" ColumnName="IDCOBASI" />
+          <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+          <ScalarProperty Name="MONASE" ColumnName="MONASE" />
+          <ScalarProperty Name="PRIAFE" ColumnName="PRIAFE" />
+          <ScalarProperty Name="PRIEXC" ColumnName="PRIEXC" />
+          <ScalarProperty Name="COM" ColumnName="COM" />
+          <ScalarProperty Name="LIM" ColumnName="LIM" />
+          <ScalarProperty Name="SUBLIM" ColumnName="SUBLIM" />
+          <ScalarProperty Name="DED" ColumnName="DED" />
+          <ScalarProperty Name="PRINET" ColumnName="PRINET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOBERTUNOTAS">
+      <EntityTypeMapping TypeName="Model.TBCOBERTUNOTA">
+        <MappingFragment StoreEntitySet="TBCOBERTUNOTAS">
+          <ScalarProperty Name="IDCOBNOT" ColumnName="IDCOBNOT" />
+          <ScalarProperty Name="IDCOBASI" ColumnName="IDCOBASI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOMPANIs">
+      <EntityTypeMapping TypeName="Model.TBCOMPANI">
+        <MappingFragment StoreEntitySet="TBCOMPANI">
+          <ScalarProperty Name="CODCOM" ColumnName="CODCOM" />
+          <ScalarProperty Name="NOMCOM" ColumnName="NOMCOM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCORREDORs">
+      <EntityTypeMapping TypeName="Model.TBCORREDOR">
+        <MappingFragment StoreEntitySet="TBCORREDOR">
+          <ScalarProperty Name="RUTCOR" ColumnName="RUTCOR" />
+          <ScalarProperty Name="NOMCOR" ColumnName="NOMCOR" />
+          <ScalarProperty Name="EMACOR" ColumnName="EMACOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOTIZACIONs">
+      <EntityTypeMapping TypeName="Model.TBCOTIZACION">
+        <MappingFragment StoreEntitySet="TBCOTIZACION">
+          <ScalarProperty Name="IDSUSCRIP" ColumnName="IDSUSCRIP" />
+          <ScalarProperty Name="IDCOT" ColumnName="IDCOT" />
+          <ScalarProperty Name="IDOPOCRECOT" ColumnName="IDOPOCRECOT" />
+          <ScalarProperty Name="IDRES" ColumnName="IDRES" />
+          <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+          <ScalarProperty Name="IDBAN" ColumnName="IDBAN" />
+          <ScalarProperty Name="IDEJECOM" ColumnName="IDEJECOM" />
+          <ScalarProperty Name="CODSUC" ColumnName="CODSUC" />
+          <ScalarProperty Name="ACTIVID" ColumnName="ACTIVID" />
+          <ScalarProperty Name="CODMON" ColumnName="CODMON" />
+          <ScalarProperty Name="CODCOM" ColumnName="CODCOM" />
+          <ScalarProperty Name="FECPRESENT" ColumnName="FECPRESENT" />
+          <ScalarProperty Name="FECEPCPOL" ColumnName="FECEPCPOL" />
+          <ScalarProperty Name="LICITAC" ColumnName="LICITAC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBEJECUTIs">
+      <EntityTypeMapping TypeName="Model.TBEJECUTI">
+        <MappingFragment StoreEntitySet="TBEJECUTI">
+          <ScalarProperty Name="IDEJECUTI" ColumnName="IDEJECUTI" />
+          <ScalarProperty Name="RUTEJECUTI" ColumnName="RUTEJECUTI" />
+          <ScalarProperty Name="NOMBREEJECUTI" ColumnName="NOMBREEJECUTI" />
+          <ScalarProperty Name="APELLIDEJECUTI" ColumnName="APELLIDEJECUTI" />
+          <ScalarProperty Name="EMAILEJECUTI" ColumnName="EMAILEJECUTI" />
+          <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBERRORs">
+      <EntityTypeMapping TypeName="Model.TBERROR">
+        <MappingFragment StoreEntitySet="TBERROR">
+          <ScalarProperty Name="IDERROR" ColumnName="IDERROR" />
+          <ScalarProperty Name="CODIGOERROR" ColumnName="CODIGOERROR" />
+          <ScalarProperty Name="TIPOERROR" ColumnName="TIPOERROR" />
+          <ScalarProperty Name="MENSAJEDELERROR" ColumnName="MENSAJEDELERROR" />
+          <ScalarProperty Name="ERRORSISTEMA" ColumnName="ERRORSISTEMA" />
+          <ScalarProperty Name="FUENTEORIGEN" ColumnName="FUENTEORIGEN" />
+          <ScalarProperty Name="METODODELERROR" ColumnName="METODODELERROR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBGRUPRAMOes">
+      <EntityTypeMapping TypeName="Model.TBGRUPRAMO">
+        <MappingFragment StoreEntitySet="TBGRUPRAMO">
+          <ScalarProperty Name="IDGRURAM" ColumnName="IDGRURAM" />
+          <ScalarProperty Name="NOMGRURAM" ColumnName="NOMGRURAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBMONEDAs">
+      <EntityTypeMapping TypeName="Model.TBMONEDA">
+        <MappingFragment StoreEntitySet="TBMONEDA">
+          <ScalarProperty Name="CODMON" ColumnName="CODMON" />
+          <ScalarProperty Name="NOMMON" ColumnName="NOMMON" />
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBOPORCOTIRAMOes">
+      <EntityTypeMapping TypeName="Model.TBOPORCOTIRAMO">
+        <MappingFragment StoreEntitySet="TBOPORCOTIRAMO">
+          <ScalarProperty Name="IDOPOCRECOT" ColumnName="IDOPOCRECOT" />
+          <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+          <ScalarProperty Name="IDOPORCOTIRAMO" ColumnName="IDOPORCOTIRAMO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBOPORCREACOTIs">
+      <EntityTypeMapping TypeName="Model.TBOPORCREACOTI">
+        <MappingFragment StoreEntitySet="TBOPORCREACOTI">
+          <ScalarProperty Name="IDOPOCRECOT" ColumnName="IDOPOCRECOT" />
+          <ScalarProperty Name="IDDEAPIP" ColumnName="IDDEAPIP" />
+          <ScalarProperty Name="RUTCLIPIP" ColumnName="RUTCLIPIP" />
+          <ScalarProperty Name="RAZSOCCLI" ColumnName="RAZSOCCLI" />
+          <ScalarProperty Name="RUTCORPIP" ColumnName="RUTCORPIP" />
+          <ScalarProperty Name="NOMRAZSOCCOT" ColumnName="NOMRAZSOCCOT" />
+          <ScalarProperty Name="APECOR" ColumnName="APECOR" />
+          <ScalarProperty Name="RUTEJECOMCOT" ColumnName="RUTEJECOMCOT" />
+          <ScalarProperty Name="NOMEJECOMCOT" ColumnName="NOMEJECOMCOT" />
+          <ScalarProperty Name="APEEJECOMCOT" ColumnName="APEEJECOMCOT" />
+          <ScalarProperty Name="EMAEJECOMCOT" ColumnName="EMAEJECOMCOT" />
+          <ScalarProperty Name="SUCCOT" ColumnName="SUCCOT" />
+          <ScalarProperty Name="GRURAMCOT" ColumnName="GRURAMCOT" />
+          <ScalarProperty Name="DESOPOCOT" ColumnName="DESOPOCOT" />
+          <ScalarProperty Name="FECCRECOT" ColumnName="FECCRECOT" />
+          <ScalarProperty Name="ESTOPOPIP" ColumnName="ESTOPOPIP" />
+          <ScalarProperty Name="IDSTAPIP" ColumnName="IDSTAPIP" />
+          <ScalarProperty Name="NOMCONCOR" ColumnName="NOMCONCOR" />
+          <ScalarProperty Name="EMAILCLI" ColumnName="EMAILCLI" />
+          <ScalarProperty Name="TELCLI" ColumnName="TELCLI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBRAMOes">
+      <EntityTypeMapping TypeName="Model.TBRAMO">
+        <MappingFragment StoreEntitySet="TBRAMO">
+          <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+          <ScalarProperty Name="CODRAM" ColumnName="CODRAM" />
+          <ScalarProperty Name="NOMRAM" ColumnName="NOMRAM" />
+          <ScalarProperty Name="IDGRURAM" ColumnName="IDGRURAM" />
+          <ScalarProperty Name="CODPIP" ColumnName="CODPIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBROLs">
+      <EntityTypeMapping TypeName="Model.TBROL">
+        <MappingFragment StoreEntitySet="TBROL">
+          <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+          <ScalarProperty Name="NOMROL" ColumnName="NOMROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBSUCURSAs">
+      <EntityTypeMapping TypeName="Model.TBSUCURSA">
+        <MappingFragment StoreEntitySet="TBSUCURSA">
+          <ScalarProperty Name="CODSUC" ColumnName="CODSUC" />
+          <ScalarProperty Name="DESSUC" ColumnName="DESSUC" />
+          <ScalarProperty Name="CODPIP" ColumnName="CODPIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBTIPOOCUPs">
+      <EntityTypeMapping TypeName="Model.TBTIPOOCUP">
+        <MappingFragment StoreEntitySet="TBTIPOOCUP">
+          <ScalarProperty Name="IDTIPOCU" ColumnName="IDTIPOCU" />
+          <ScalarProperty Name="NOMTIPOCU" ColumnName="NOMTIPOCU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEL_TBEXCEPCIONES">
+      <EntityTypeMapping TypeName="Model.DEL_TBEXCEPCIONES">
+        <MappingFragment StoreEntitySet="DEL_TBEXCEPCIONES">
+          <ScalarProperty Name="IDEXC" ColumnName="IDEXC" />
+          <ScalarProperty Name="IDTIPMOV" ColumnName="IDTIPMOV" />
+          <ScalarProperty Name="CODTIPERR" ColumnName="CODTIPERR" />
+          <ScalarProperty Name="MEN" ColumnName="MEN" />
+          <ScalarProperty Name="JSO" ColumnName="JSO" />
+          <ScalarProperty Name="FECAUD" ColumnName="FECAUD" />
+          <ScalarProperty Name="REP" ColumnName="REP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEL_TBRESPUESTAAPI">
+      <EntityTypeMapping TypeName="Model.DEL_TBRESPUESTAAPI">
+        <MappingFragment StoreEntitySet="DEL_TBRESPUESTAAPI">
+          <ScalarProperty Name="IDRESAPI" ColumnName="IDRESAPI" />
+          <ScalarProperty Name="IDTIPMOV" ColumnName="IDTIPMOV" />
+          <ScalarProperty Name="RESCOD" ColumnName="RESCOD" />
+          <ScalarProperty Name="VOUNUM" ColumnName="VOUNUM" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="GLOJSO" ColumnName="GLOJSO" />
+          <ScalarProperty Name="GLOJSOSAL" ColumnName="GLOJSOSAL" />
+          <ScalarProperty Name="GLOJSOENT" ColumnName="GLOJSOENT" />
+          <ScalarProperty Name="CODDOC" ColumnName="CODDOC" />
+          <ScalarProperty Name="FECAUD" ColumnName="FECAUD" />
+          <ScalarProperty Name="RESMES" ColumnName="RESMES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOTIZACIONUBICs">
+      <EntityTypeMapping TypeName="Model.TBCOTIZACIONUBIC">
+        <MappingFragment StoreEntitySet="TBCOTIZACIONUBIC">
+          <ScalarProperty Name="IDCOTUBI" ColumnName="IDCOTUBI" />
+          <ScalarProperty Name="IDCOT" ColumnName="IDCOT" />
+          <ScalarProperty Name="DIRECCI" ColumnName="DIRECCI" />
+          <ScalarProperty Name="DIRNRO" ColumnName="DIRNRO" />
+          <ScalarProperty Name="IDREG" ColumnName="IDREG" />
+          <ScalarProperty Name="IDCOMU" ColumnName="IDCOMU" />
+          <ScalarProperty Name="IDMURO" ColumnName="IDMURO" />
+          <ScalarProperty Name="IDTECHO" ColumnName="IDTECHO" />
+          <ScalarProperty Name="ANOCONSTRU" ColumnName="ANOCONSTRU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOTRAMMATs">
+      <EntityTypeMapping TypeName="Model.TBCOTRAMMAT">
+        <MappingFragment StoreEntitySet="TBCOTRAMMAT">
+          <ScalarProperty Name="IDCOTRAMMAT" ColumnName="IDCOTRAMMAT" />
+          <ScalarProperty Name="IDCOTRAM" ColumnName="IDCOTRAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOTRAMNOTs">
+      <EntityTypeMapping TypeName="Model.TBCOTRAMNOT">
+        <MappingFragment StoreEntitySet="TBCOTRAMNOT">
+          <ScalarProperty Name="IDCOTRAMNOT" ColumnName="IDCOTRAMNOT" />
+          <ScalarProperty Name="IDCOTRAM" ColumnName="IDCOTRAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCUESUBICs">
+      <EntityTypeMapping TypeName="Model.TBCUESUBIC">
+        <MappingFragment StoreEntitySet="TBCUESUBIC">
+          <ScalarProperty Name="IDCUE" ColumnName="IDCUE" />
+          <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBEXCELIBERESEs">
+      <EntityTypeMapping TypeName="Model.TBEXCELIBERESE">
+        <MappingFragment StoreEntitySet="TBEXCELIBERESE">
+          <ScalarProperty Name="IDEXCLIBRES" ColumnName="IDEXCLIBRES" />
+          <ScalarProperty Name="RUTCOR" ColumnName="RUTCOR" />
+          <ScalarProperty Name="RUTCLI" ColumnName="RUTCLI" />
+          <ScalarProperty Name="IDGRURAM" ColumnName="IDGRURAM" />
+          <ScalarProperty Name="FECINI" ColumnName="FECINI" />
+          <ScalarProperty Name="FECFIN" ColumnName="FECFIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBFORMAPAGOes">
+      <EntityTypeMapping TypeName="Model.TBFORMAPAGO">
+        <MappingFragment StoreEntitySet="TBFORMAPAGO">
+          <ScalarProperty Name="IDFORPAG" ColumnName="IDFORPAG" />
+          <ScalarProperty Name="IDPLAPAG" ColumnName="IDPLAPAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBHOMOCAMPPIPECOTIRESEs">
+      <EntityTypeMapping TypeName="Model.TBHOMOCAMPPIPECOTIRESE">
+        <MappingFragment StoreEntitySet="TBHOMOCAMPPIPECOTIRESE">
+          <ScalarProperty Name="IDHOM" ColumnName="IDHOM" />
+          <ScalarProperty Name="IDPIP" ColumnName="IDPIP" />
+          <ScalarProperty Name="KEYPIP" ColumnName="KEYPIP" />
+          <ScalarProperty Name="NAMPIP" ColumnName="NAMPIP" />
+          <ScalarProperty Name="AMB" ColumnName="AMB" />
+          <ScalarProperty Name="TIPUSO" ColumnName="TIPUSO" />
+          <ScalarProperty Name="NOMCAMCOT" ColumnName="NOMCAMCOT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBHOMOCAMPVALOPIPEs">
+      <EntityTypeMapping TypeName="Model.TBHOMOCAMPVALOPIPE">
+        <MappingFragment StoreEntitySet="TBHOMOCAMPVALOPIPE">
+          <ScalarProperty Name="IDVALCAMPIP" ColumnName="IDVALCAMPIP" />
+          <ScalarProperty Name="VALCAMPIP" ColumnName="VALCAMPIP" />
+          <ScalarProperty Name="IDHOM" ColumnName="IDHOM" />
+          <ScalarProperty Name="VALCAMCOT" ColumnName="VALCAMCOT" />
+          <ScalarProperty Name="VALAGRCAMCOT" ColumnName="VALAGRCAMCOT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBITEMS">
+      <EntityTypeMapping TypeName="Model.TBITEM">
+        <MappingFragment StoreEntitySet="TBITEMS">
+          <ScalarProperty Name="IDITE" ColumnName="IDITE" />
+          <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBMONASEBAS">
+      <EntityTypeMapping TypeName="Model.TBMONASEBA">
+        <MappingFragment StoreEntitySet="TBMONASEBAS">
+          <ScalarProperty Name="IDMONASEBAS" ColumnName="IDMONASEBAS" />
+          <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBOCUPACIs">
+      <EntityTypeMapping TypeName="Model.TBOCUPACI">
+        <MappingFragment StoreEntitySet="TBOCUPACI">
+          <ScalarProperty Name="IDOCUPACI" ColumnName="IDOCUPACI" />
+          <ScalarProperty Name="IDRAMO" ColumnName="IDRAMO" />
+          <ScalarProperty Name="IDTIPORIESGO" ColumnName="IDTIPORIESGO" />
+          <ScalarProperty Name="IDTIPOOCUPACI" ColumnName="IDTIPOOCUPACI" />
+          <ScalarProperty Name="ACTIVID" ColumnName="ACTIVID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBOPORTUNIDADs">
+      <EntityTypeMapping TypeName="Model.TBOPORTUNIDAD">
+        <MappingFragment StoreEntitySet="TBOPORTUNIDAD">
+          <ScalarProperty Name="IDDEA" ColumnName="IDDEA" />
+          <ScalarProperty Name="IDCOT" ColumnName="IDCOT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBOPORTUNRECIENTs">
+      <EntityTypeMapping TypeName="Model.TBOPORTUNRECIENT">
+        <MappingFragment StoreEntitySet="TBOPORTUNRECIENT">
+          <ScalarProperty Name="IDOPOREC" ColumnName="IDOPOREC" />
+          <ScalarProperty Name="CAMPIP" ColumnName="CAMPIP" />
+          <ScalarProperty Name="VALCAMPIP" ColumnName="VALCAMPIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPLANPAGOes">
+      <EntityTypeMapping TypeName="Model.TBPLANPAGO">
+        <MappingFragment StoreEntitySet="TBPLANPAGO">
+          <ScalarProperty Name="IDPLAPAG" ColumnName="IDPLAPAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBPRECUERAMs">
+      <EntityTypeMapping TypeName="Model.TBPRECUERAM">
+        <MappingFragment StoreEntitySet="TBPRECUERAM">
+          <ScalarProperty Name="IDPRECUE" ColumnName="IDPRECUE" />
+          <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBRESERVAs">
+      <EntityTypeMapping TypeName="Model.TBRESERVA">
+        <MappingFragment StoreEntitySet="TBRESERVA">
+          <ScalarProperty Name="IDRES" ColumnName="IDRES" />
+          <ScalarProperty Name="RUTCOR" ColumnName="RUTCOR" />
+          <ScalarProperty Name="RUTCLI" ColumnName="RUTCLI" />
+          <ScalarProperty Name="IDGRURAM" ColumnName="IDGRURAM" />
+          <ScalarProperty Name="FECINI" ColumnName="FECINI" />
+          <ScalarProperty Name="FECFIN" ColumnName="FECFIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBTIPORIES">
+      <EntityTypeMapping TypeName="Model.TBTIPORy">
+        <MappingFragment StoreEntitySet="TBTIPORIES">
+          <ScalarProperty Name="IDTIPRIE" ColumnName="IDTIPRIE" />
+          <ScalarProperty Name="NOMTIPRIE" ColumnName="NOMTIPRIE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBUBICACIONs">
+      <EntityTypeMapping TypeName="Model.TBUBICACION">
+        <MappingFragment StoreEntitySet="TBUBICACION">
+          <ScalarProperty Name="IDUBI" ColumnName="IDUBI" />
+          <ScalarProperty Name="IDCOTRAM" ColumnName="IDCOTRAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEL_TBCOTIZACIONRAMO">
+      <EntityTypeMapping TypeName="Model.DEL_TBCOTIZACIONRAMO">
+        <MappingFragment StoreEntitySet="DEL_TBCOTIZACIONRAMO">
+          <ScalarProperty Name="ACT" ColumnName="ACT" />
+          <ScalarProperty Name="IDRAM" ColumnName="IDRAM" />
+          <ScalarProperty Name="IDCOT" ColumnName="IDCOT" />
+          <ScalarProperty Name="IDCOTRAM" ColumnName="IDCOTRAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBCOMUNAs">
+      <EntityTypeMapping TypeName="Model.TBCOMUNA">
+        <MappingFragment StoreEntitySet="TBCOMUNA">
+          <ScalarProperty Name="NOMCOMUNA" ColumnName="NOMCOMUNA" />
+          <ScalarProperty Name="CODREGION" ColumnName="CODREGION" />
+          <ScalarProperty Name="CODCOMUNA" ColumnName="CODCOMUNA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBREGIONs">
+      <EntityTypeMapping TypeName="Model.TBREGION">
+        <MappingFragment StoreEntitySet="TBREGION">
+          <ScalarProperty Name="NOMREGION" ColumnName="NOMREGION" />
+          <ScalarProperty Name="CODREGION" ColumnName="CODREGION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBTOOLTIPs">
+      <EntityTypeMapping TypeName="Model.TBTOOLTIP">
+        <MappingFragment StoreEntitySet="TBTOOLTIP">
+          <ScalarProperty Name="NOMTOOLTIP" ColumnName="NOMTOOLTIP" />
+          <ScalarProperty Name="CODTOOLTIP" ColumnName="CODTOOLTIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

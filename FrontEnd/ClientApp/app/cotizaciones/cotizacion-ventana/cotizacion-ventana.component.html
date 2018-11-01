@@ -1,0 +1,219 @@
+<div id="content-wrapper" class="resultados-busqueda">
+    <div class="container-fluid">
+        <div class="row resultados-busqueda">
+            <div class="col-lg-4">
+                <h1 class="importante"><u>Detalle Cotización</u></h1>
+            </div>
+            <div class="col-lg-8"></div>
+        </div>
+        <div class="card formulario-bloque">
+            <div class="card-header">
+                Cotización
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <p class="formularios largo mb-2">
+                            <label for="corredor">CORREDOR</label>
+                            <input class="form-control" type="text" placeholder="CORREDOR" name="corredor" disabled="true" id="corredor">
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <p class="formularios largo mb-2">
+                            <label for="sucursal">SUCURSAL</label>
+                            <input class="form-control" type="text" placeholder="SUCURSAL" name="sucursal" disabled="true" id="sucursal">
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <p class="formularios largo mb-2">
+                            <label for="rut_contratante">RUT CONTRATANTE</label>
+                            <input class="form-control" type="text" placeholder="RUT CONTRATANTE" name="rut_contratante" id="rut_contratante">
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                        <p class="formularios largo mb-2">
+                            <label for="telefono">TELÉFONO</label>
+                            <input class="form-control" type="text" placeholder="TELÉFONO" name="telefono" id="telefono">
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <p class="formularios largo mb-2">
+                            <label for="razon_social">RAZÓN SOCIAL</label>
+                            <input class="form-control" type="text" placeholder="RAZÓN SOCIAL" name="razon_social" id="razon_social">
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <p class="formularios largo mb-2">
+                            <label for="email">EMAIL</label>
+                            <input class="form-control" type="text" placeholder="EMAIL" name="email" id="email">
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-18 col-lg-12">
+                        <p class="formularios largo mb-auto">
+                            <label for="comentario">COMENTARIO</label>
+                            <input class="form-control" type="text" placeholder="" name="comentario" id="comentario">                        
+                        </p>
+                    </div>
+                </div>
+                <hr/>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-4">
+                            <p class="formularios largo mb-2">
+                                <label for="grupo_ramo">GRUPO RAMO</label>
+                                <select class="form-control">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let grupo of grupoRamos" id="{{grupo.IDGRURAM}}">{{grupo.NOMGRURAM}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="actividad">ACTIVIDAD</label>
+                                <select class="form-control" id="lista_actividades">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let actividad of actividades" id="{{actividad.IDACTIVID}}">{{actividad.NOMACTIVID}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="riesgo">CIA. RIESGO</label>
+                                <select class="form-control" id="riesgo">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let cia of ciaRiesgos" id="{{cia.CODCOM}}">{{cia.NOMCOM}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="licitacion">LICITACIÓN</label>
+                                <span class="form-control">
+                                    <input class="form-check-input" type="radio" name="licitacionRadio" id="licitacionRadio1" value="option1" checked>
+                                    <label class="form-check-label" for="licitacionRadio1">SI</label>
+                                    <input class="form-check-input" type="radio" name="licitacionRadio" id="licitacionRadio2" value="option2" checked>
+                                    <label class="form-check-label" for="licitacionRadio2">NO</label>
+                                </span>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <p class="formularios largo mb-2">
+                                <label for="ramo">RAMO</label>
+                                <select class="form-control">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let ramo of ramos" id="{{ramo.IDRAM}}">{{ramo.NOMRAM}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="ocupacion">OCUPACIÓN</label>
+                                <input class="form-control" type="text" placeholder="" name="ocupacion" id="ocupacion" disabled="true">
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="fecha1">FECHA1</label>
+                                <input class="form-control" type="text" placeholder="FECHA1" name="fecha1" id="fecha1">
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="ubicaciones">UBICACIONES</label>
+                                <br/>
+                                <span class="boton bg-azul" title="Acciones" (click)="agregarUbicacion()">AGREGAR UBICACIÓN</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <p class="formularios largo mb-2">
+                                <label for="moneda">MONEDA</label>
+                                <select class="form-control">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let moneda of monedas" id="{{moneda.CODMON}}">{{moneda.NOMMON}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="tipo_riesgo">TIPO RIESGO</label>
+                                <input class="form-control" type="text" placeholder="TIPO RIESGO" name="tipo_riesgo" id="tipo_riesgo" disabled="true"/>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="fecha_inscripcion">FECHA_INSCRIPCIÓN</label>
+                                <input class="form-control" type="text" placeholder="FECHA_INSCRIPCIÓN" name="fecha_inscripcion" id="fecha_inscripcion">
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+
+
+                        </div>
+                    </div>
+                    <hr />
+                    <div *ngFor="let ubicacion of ubicaciones" class="row">
+                        <div class="col-sm-6 col-lg-4">
+                            <p class="formularios largo mb-2">
+                                <label for="direccion">DIRECCIÓN</label>
+                                <input class="form-control" type="text" placeholder="FECHA_INSCRIPCIÓN" name="direccion" id="direccion">
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="numero">NÚMERO</label>
+                                <input class="form-control" type="text" placeholder="FECHA_INSCRIPCIÓN" name="numero" id="numero">
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="region">REGIÓN</label>
+                                <select class="form-control" id="region">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let region of ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','RM','XIV','XV']">{{region}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <p class="formularios largo mb-2">
+                                <label for="comuna">COMUNA</label>
+                                <select class="form-control" id="comuna">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let comuna of [1,2,3,4,5]">{{comuna}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="agno_coti">AÑO COTIZACIÓN</label>
+                                <input class="form-control" type="text" placeholder="AÑO COTIZACIÓN" name="agno_coti" id="agno_coti">
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <p class="formularios largo mb-2">
+                                <label for="muro">MURO</label>
+                                <select class="form-control" id="muro">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let muro of ['muro1','muro2','muro3','muro4']">{{muro}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                            <p class="formularios largo mb-2">
+                                <label for="techo">TECHO</label>
+                                <select class="form-control" id="techo">
+                                    <option disabled>Elige una Opción</option>
+                                    <option *ngFor="let techo of ['techo1','techo2','techo3','techo4']">{{techo}}</option>
+                                </select>
+                                <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <div class="card-footer">
+                <div class="boton bg-gris " title="cancelar">
+                    Cancelar
+                </div>
+                <div class="boton bg-verde " title="guardar">
+                    Guardar
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

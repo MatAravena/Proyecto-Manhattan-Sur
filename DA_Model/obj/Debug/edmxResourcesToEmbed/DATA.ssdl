@@ -1,0 +1,856 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DEL_TBADMINISMOVIMIE">
+    <Key>
+      <PropertyRef Name="IDMOV" />
+    </Key>
+    <Property Name="IDMOV" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOM" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.DEL_TBCOTIZACIONRAMO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="DEL_TBCOTIZACIONRAMO">
+    <Key>
+      <PropertyRef Name="IDCOTRAM" />
+      <PropertyRef Name="IDCOT" />
+      <PropertyRef Name="IDRAM" />
+      <PropertyRef Name="ACT" />
+    </Key>
+    <Property Name="IDCOTRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDCOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="ACT" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.DEL_TBEXCEPCIONES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="DEL_TBEXCEPCIONES">
+    <Key>
+      <PropertyRef Name="IDEXC" />
+      <PropertyRef Name="IDTIPMOV" />
+    </Key>
+    <Property Name="IDEXC" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDTIPMOV" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="CODTIPERR" Type="varchar2" MaxLength="5" />
+    <Property Name="MEN" Type="varchar2" MaxLength="1000" />
+    <Property Name="JSO" Type="clob" />
+    <Property Name="FECAUD" Type="date" />
+    <Property Name="REP" Type="char" MaxLength="5" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.DEL_TBRESPUESTAAPI' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="DEL_TBRESPUESTAAPI">
+    <Key>
+      <PropertyRef Name="IDRESAPI" />
+      <PropertyRef Name="IDTIPMOV" />
+      <PropertyRef Name="FECAUD" />
+    </Key>
+    <Property Name="IDRESAPI" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDTIPMOV" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="RESCOD" Type="varchar2" MaxLength="50" />
+    <Property Name="VOUNUM" Type="varchar2" MaxLength="50" />
+    <Property Name="VIN" Type="varchar2" MaxLength="50" />
+    <Property Name="GLOJSO" Type="clob" />
+    <Property Name="GLOJSOSAL" Type="clob" />
+    <Property Name="GLOJSOENT" Type="clob" />
+    <Property Name="CODDOC" Type="varchar2" MaxLength="50" />
+    <Property Name="FECAUD" Type="date" Nullable="false" />
+    <Property Name="RESMES" Type="varchar2" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="TBBANDERA">
+    <Key>
+      <PropertyRef Name="IDBAN" />
+    </Key>
+    <Property Name="IDBAN" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOMBAN" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBBITACORERRORES">
+    <Key>
+      <PropertyRef Name="IDBITACORERRORES" />
+    </Key>
+    <Property Name="IDBITACORERRORES" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="FECHAPETICIO" Type="date" />
+    <Property Name="FECHARESPUES" Type="date" />
+    <Property Name="SISTEMA" Type="varchar2" MaxLength="50" />
+    <Property Name="ACCION" Type="varchar2" MaxLength="50" />
+    <Property Name="GRAVEDA" Type="varchar2" MaxLength="50" />
+    <Property Name="MODULOS" Type="varchar2" MaxLength="50" />
+    <Property Name="CAMPO" Type="varchar2" MaxLength="50" />
+    <Property Name="IDERROR" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBCLIENTE">
+    <Key>
+      <PropertyRef Name="RUTCLI" />
+    </Key>
+    <Property Name="RUTCLI" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="NOMCLI" Type="varchar2" MaxLength="50" />
+    <Property Name="EMACLI" Type="varchar2" MaxLength="255" />
+    <Property Name="DIRCLI" Type="varchar2" MaxLength="255" />
+    <Property Name="TELCLI" Type="varchar2" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TBCOBASI">
+    <Key>
+      <PropertyRef Name="IDCOBASI" />
+    </Key>
+    <Property Name="IDCOBASI" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="MONASE" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="PRIAFE" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="PRIEXC" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="COM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="LIM" Type="varchar2" MaxLength="50" />
+    <Property Name="SUBLIM" Type="varchar2" MaxLength="50" />
+    <Property Name="DED" Type="varchar2" MaxLength="50" />
+    <Property Name="PRINET" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBCOBERTUNOTAS">
+    <Key>
+      <PropertyRef Name="IDCOBNOT" />
+    </Key>
+    <Property Name="IDCOBNOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDCOBASI" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBCOMPANI">
+    <Key>
+      <PropertyRef Name="CODCOM" />
+    </Key>
+    <Property Name="CODCOM" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMCOM" Type="varchar2" MaxLength="255" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCOMUNA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBCOMUNA">
+    <Key>
+      <PropertyRef Name="CODCOMUNA" />
+      <PropertyRef Name="CODREGION" />
+      <PropertyRef Name="NOMCOMUNA" />
+    </Key>
+    <Property Name="CODCOMUNA" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="CODREGION" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOMCOMUNA" Type="varchar2" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBCORREDOR">
+    <Key>
+      <PropertyRef Name="RUTCOR" />
+    </Key>
+    <Property Name="RUTCOR" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="NOMCOR" Type="varchar2" MaxLength="50" />
+    <Property Name="EMACOR" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBCOTIZACION">
+    <Key>
+      <PropertyRef Name="IDCOT" />
+    </Key>
+    <Property Name="IDCOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDOPOCRECOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDRES" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDRAM" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDBAN" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDEJECOM" Type="number" Precision="19" Scale="0" />
+    <Property Name="CODSUC" Type="varchar2" MaxLength="255" />
+    <Property Name="ACTIVID" Type="varchar2" MaxLength="255" />
+    <Property Name="CODMON" Type="number" Precision="38" Scale="0" />
+    <Property Name="CODCOM" Type="number" Precision="38" Scale="0" />
+    <Property Name="FECPRESENT" Type="date" />
+    <Property Name="FECEPCPOL" Type="date" />
+    <Property Name="LICITAC" Type="number" Precision="38" Scale="0" />
+    <Property Name="IDSUSCRIP" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCOTIZACIONUBIC' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBCOTIZACIONUBIC">
+    <Key>
+      <PropertyRef Name="IDCOTUBI" />
+      <PropertyRef Name="IDCOT" />
+    </Key>
+    <Property Name="IDCOTUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDCOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="DIRECCI" Type="varchar2" MaxLength="255" />
+    <Property Name="DIRNRO" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDREG" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDCOMU" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDMURO" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDTECHO" Type="number" Precision="19" Scale="0" />
+    <Property Name="ANOCONSTRU" Type="number" Precision="19" Scale="0" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCOTRAMMAT' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBCOTRAMMAT">
+    <Key>
+      <PropertyRef Name="IDCOTRAMMAT" />
+      <PropertyRef Name="IDCOTRAM" />
+    </Key>
+    <Property Name="IDCOTRAMMAT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDCOTRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCOTRAMNOT' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBCOTRAMNOT">
+    <Key>
+      <PropertyRef Name="IDCOTRAMNOT" />
+      <PropertyRef Name="IDCOTRAM" />
+    </Key>
+    <Property Name="IDCOTRAMNOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDCOTRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBCUESUBIC' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBCUESUBIC">
+    <Key>
+      <PropertyRef Name="IDCUE" />
+      <PropertyRef Name="IDUBI" />
+    </Key>
+    <Property Name="IDCUE" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBEJECUTI">
+    <Key>
+      <PropertyRef Name="IDEJECUTI" />
+    </Key>
+    <Property Name="IDEJECUTI" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="RUTEJECUTI" Type="varchar2" MaxLength="100" />
+    <Property Name="NOMBREEJECUTI" Type="varchar2" MaxLength="100" />
+    <Property Name="APELLIDEJECUTI" Type="varchar2" MaxLength="100" />
+    <Property Name="EMAILEJECUTI" Type="varchar2" MaxLength="100" />
+    <Property Name="IDROL" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBERROR">
+    <Key>
+      <PropertyRef Name="IDERROR" />
+    </Key>
+    <Property Name="IDERROR" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="CODIGOERROR" Type="number" Precision="19" Scale="0" />
+    <Property Name="TIPOERROR" Type="varchar2" MaxLength="1000" />
+    <Property Name="MENSAJEDELERROR" Type="varchar2" MaxLength="1000" />
+    <Property Name="ERRORSISTEMA" Type="varchar2" MaxLength="1000" />
+    <Property Name="FUENTEORIGEN" Type="varchar2" MaxLength="500" />
+    <Property Name="METODODELERROR" Type="varchar2" MaxLength="40" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBEXCELIBERESE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBEXCELIBERESE">
+    <Key>
+      <PropertyRef Name="IDEXCLIBRES" />
+      <PropertyRef Name="RUTCOR" />
+      <PropertyRef Name="RUTCLI" />
+      <PropertyRef Name="IDGRURAM" />
+    </Key>
+    <Property Name="IDEXCLIBRES" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="RUTCOR" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="RUTCLI" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="IDGRURAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="FECINI" Type="timestamp" Precision="6" />
+    <Property Name="FECFIN" Type="timestamp" Precision="6" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBFORMAPAGO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBFORMAPAGO">
+    <Key>
+      <PropertyRef Name="IDFORPAG" />
+      <PropertyRef Name="IDPLAPAG" />
+    </Key>
+    <Property Name="IDFORPAG" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDPLAPAG" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBGRUPRAMO">
+    <Key>
+      <PropertyRef Name="IDGRURAM" />
+    </Key>
+    <Property Name="IDGRURAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOMGRURAM" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBHOMOCAMPPIPECOTIRESE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBHOMOCAMPPIPECOTIRESE">
+    <Key>
+      <PropertyRef Name="IDHOM" />
+    </Key>
+    <Property Name="IDHOM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDPIP" Type="number" Precision="19" Scale="0" />
+    <Property Name="KEYPIP" Type="varchar2" MaxLength="50" />
+    <Property Name="NAMPIP" Type="varchar2" MaxLength="50" />
+    <Property Name="AMB" Type="varchar2" MaxLength="50" />
+    <Property Name="TIPUSO" Type="varchar2" MaxLength="50" />
+    <Property Name="NOMCAMCOT" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBHOMOCAMPVALOPIPE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBHOMOCAMPVALOPIPE">
+    <Key>
+      <PropertyRef Name="IDVALCAMPIP" />
+    </Key>
+    <Property Name="IDVALCAMPIP" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="VALCAMPIP" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDHOM" Type="number" Precision="19" Scale="0" />
+    <Property Name="VALCAMCOT" Type="varchar2" MaxLength="50" />
+    <Property Name="VALAGRCAMCOT" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBITEMS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBITEMS">
+    <Key>
+      <PropertyRef Name="IDITE" />
+      <PropertyRef Name="IDUBI" />
+    </Key>
+    <Property Name="IDITE" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBMONASEBAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBMONASEBAS">
+    <Key>
+      <PropertyRef Name="IDMONASEBAS" />
+      <PropertyRef Name="IDUBI" />
+    </Key>
+    <Property Name="IDMONASEBAS" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBMONEDA">
+    <Key>
+      <PropertyRef Name="CODMON" />
+    </Key>
+    <Property Name="CODMON" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="NOMMON" Type="varchar2" MaxLength="255" />
+    <Property Name="ACTIVO" Type="number" Precision="1" Scale="0" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBOCUPACI' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBOCUPACI">
+    <Key>
+      <PropertyRef Name="IDOCUPACI" />
+      <PropertyRef Name="IDRAMO" />
+      <PropertyRef Name="IDTIPORIESGO" />
+      <PropertyRef Name="IDTIPOOCUPACI" />
+    </Key>
+    <Property Name="IDOCUPACI" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDRAMO" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDTIPORIESGO" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDTIPOOCUPACI" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="ACTIVID" Type="varchar2" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="TBOPORCOTIRAMO">
+    <Key>
+      <PropertyRef Name="IDOPORCOTIRAMO" />
+    </Key>
+    <Property Name="IDOPOCRECOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDRAM" Type="number" Precision="19" Scale="0" />
+    <Property Name="IDOPORCOTIRAMO" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBOPORCREACOTI">
+    <Key>
+      <PropertyRef Name="IDOPOCRECOT" />
+    </Key>
+    <Property Name="IDOPOCRECOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDDEAPIP" Type="number" Precision="19" Scale="0" />
+    <Property Name="RUTCLIPIP" Type="varchar2" MaxLength="12" />
+    <Property Name="RAZSOCCLI" Type="varchar2" MaxLength="255" />
+    <Property Name="RUTCORPIP" Type="varchar2" MaxLength="12" />
+    <Property Name="NOMRAZSOCCOT" Type="varchar2" MaxLength="255" />
+    <Property Name="APECOR" Type="varchar2" MaxLength="255" />
+    <Property Name="RUTEJECOMCOT" Type="varchar2" MaxLength="12" />
+    <Property Name="NOMEJECOMCOT" Type="varchar2" MaxLength="255" />
+    <Property Name="APEEJECOMCOT" Type="varchar2" MaxLength="255" />
+    <Property Name="EMAEJECOMCOT" Type="varchar2" MaxLength="255" />
+    <Property Name="SUCCOT" Type="varchar2" MaxLength="50" />
+    <Property Name="GRURAMCOT" Type="number" Precision="19" Scale="0" />
+    <Property Name="DESOPOCOT" Type="varchar2" MaxLength="50" />
+    <Property Name="FECCRECOT" Type="date" />
+    <Property Name="ESTOPOPIP" Type="varchar2" MaxLength="50" />
+    <Property Name="IDSTAPIP" Type="number" Precision="19" Scale="0" />
+    <Property Name="NOMCONCOR" Type="varchar2" MaxLength="255" />
+    <Property Name="EMAILCLI" Type="varchar2" MaxLength="255" />
+    <Property Name="TELCLI" Type="varchar2" MaxLength="255" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBOPORTUNIDAD' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBOPORTUNIDAD">
+    <Key>
+      <PropertyRef Name="IDDEA" />
+      <PropertyRef Name="IDCOT" />
+    </Key>
+    <Property Name="IDDEA" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDCOT" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBOPORTUNRECIENT' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBOPORTUNRECIENT">
+    <Key>
+      <PropertyRef Name="IDOPOREC" />
+    </Key>
+    <Property Name="IDOPOREC" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="CAMPIP" Type="varchar2" MaxLength="50" />
+    <Property Name="VALCAMPIP" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBPLANPAGO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBPLANPAGO">
+    <Key>
+      <PropertyRef Name="IDPLAPAG" />
+    </Key>
+    <Property Name="IDPLAPAG" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBPRECUERAM' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBPRECUERAM">
+    <Key>
+      <PropertyRef Name="IDPRECUE" />
+      <PropertyRef Name="IDRAM" />
+    </Key>
+    <Property Name="IDPRECUE" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBRAMO">
+    <Key>
+      <PropertyRef Name="IDRAM" />
+    </Key>
+    <Property Name="IDRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="CODRAM" Type="varchar2" MaxLength="50" />
+    <Property Name="NOMRAM" Type="varchar2" MaxLength="50" />
+    <Property Name="IDGRURAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="CODPIP" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBREGION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBREGION">
+    <Key>
+      <PropertyRef Name="CODREGION" />
+      <PropertyRef Name="NOMREGION" />
+    </Key>
+    <Property Name="CODREGION" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOMREGION" Type="varchar2" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBRESERVA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBRESERVA">
+    <Key>
+      <PropertyRef Name="IDRES" />
+      <PropertyRef Name="RUTCOR" />
+      <PropertyRef Name="RUTCLI" />
+      <PropertyRef Name="IDGRURAM" />
+    </Key>
+    <Property Name="IDRES" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="RUTCOR" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="RUTCLI" Type="varchar2" MaxLength="12" Nullable="false" />
+    <Property Name="IDGRURAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="FECINI" Type="timestamp" Precision="6" />
+    <Property Name="FECFIN" Type="timestamp" Precision="6" />
+  </EntityType>
+  <EntityType Name="TBROL">
+    <Key>
+      <PropertyRef Name="IDROL" />
+    </Key>
+    <Property Name="IDROL" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOMROL" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBSUCURSA">
+    <Key>
+      <PropertyRef Name="CODSUC" />
+    </Key>
+    <Property Name="CODSUC" Type="varchar2" MaxLength="5" Nullable="false" />
+    <Property Name="DESSUC" Type="varchar2" MaxLength="50" />
+    <Property Name="CODPIP" Type="varchar2" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBTIPOOCUP">
+    <Key>
+      <PropertyRef Name="IDTIPOCU" />
+    </Key>
+    <Property Name="IDTIPOCU" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOMTIPOCU" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBTIPORIES' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBTIPORIES">
+    <Key>
+      <PropertyRef Name="IDTIPRIE" />
+      <PropertyRef Name="NOMTIPRIE" />
+    </Key>
+    <Property Name="IDTIPRIE" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOMTIPRIE" Type="varchar2" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBTOOLTIP' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBTOOLTIP">
+    <Key>
+      <PropertyRef Name="CODTOOLTIP" />
+      <PropertyRef Name="NOMTOOLTIP" />
+    </Key>
+    <Property Name="CODTOOLTIP" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="NOMTOOLTIP" Type="varchar2" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ADMBCIVLC.TBUBICACION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TBUBICACION">
+    <Key>
+      <PropertyRef Name="IDUBI" />
+      <PropertyRef Name="IDCOTRAM" />
+    </Key>
+    <Property Name="IDUBI" Type="number" Precision="19" Scale="0" Nullable="false" />
+    <Property Name="IDCOTRAM" Type="number" Precision="19" Scale="0" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TBBITACORERRORES_IDERROR">
+    <End Role="TBERROR" Type="Self.TBERROR" Multiplicity="1" />
+    <End Role="TBBITACORERRORES" Type="Self.TBBITACORERRORES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBERROR">
+        <PropertyRef Name="IDERROR" />
+      </Principal>
+      <Dependent Role="TBBITACORERRORES">
+        <PropertyRef Name="IDERROR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK1_TBCOBERTUNOTAS_IDCOBASI">
+    <End Role="TBCOBASI" Type="Self.TBCOBASI" Multiplicity="1" />
+    <End Role="TBCOBERTUNOTAS" Type="Self.TBCOBERTUNOTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBCOBASI">
+        <PropertyRef Name="IDCOBASI" />
+      </Principal>
+      <Dependent Role="TBCOBERTUNOTAS">
+        <PropertyRef Name="IDCOBASI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TBCOTIZACION_CODSUC_FK">
+    <End Role="TBSUCURSA" Type="Self.TBSUCURSA" Multiplicity="0..1" />
+    <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBSUCURSA">
+        <PropertyRef Name="CODSUC" />
+      </Principal>
+      <Dependent Role="TBCOTIZACION">
+        <PropertyRef Name="CODSUC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TBCOTIZACION_EJECOM_FK">
+    <End Role="TBEJECUTI" Type="Self.TBEJECUTI" Multiplicity="0..1" />
+    <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBEJECUTI">
+        <PropertyRef Name="IDEJECUTI" />
+      </Principal>
+      <Dependent Role="TBCOTIZACION">
+        <PropertyRef Name="IDEJECOM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TBCOTIZACION_FK">
+    <End Role="TBOPORCREACOTI" Type="Self.TBOPORCREACOTI" Multiplicity="1" />
+    <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBOPORCREACOTI">
+        <PropertyRef Name="IDOPOCRECOT" />
+      </Principal>
+      <Dependent Role="TBCOTIZACION">
+        <PropertyRef Name="IDOPOCRECOT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TBCOTIZACION_IDBAN_FK">
+    <End Role="TBBANDERA" Type="Self.TBBANDERA" Multiplicity="0..1" />
+    <End Role="TBCOTIZACION" Type="Self.TBCOTIZACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBBANDERA">
+        <PropertyRef Name="IDBAN" />
+      </Principal>
+      <Dependent Role="TBCOTIZACION">
+        <PropertyRef Name="IDBAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TBEJECUTI_IDROL_FK">
+    <End Role="TBROL" Type="Self.TBROL" Multiplicity="1" />
+    <End Role="TBEJECUTI" Type="Self.TBEJECUTI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBROL">
+        <PropertyRef Name="IDROL" />
+      </Principal>
+      <Dependent Role="TBEJECUTI">
+        <PropertyRef Name="IDROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TBOPORCOTIRAMO_FK">
+    <End Role="TBOPORCREACOTI" Type="Self.TBOPORCREACOTI" Multiplicity="1" />
+    <End Role="TBOPORCOTIRAMO" Type="Self.TBOPORCOTIRAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBOPORCREACOTI">
+        <PropertyRef Name="IDOPOCRECOT" />
+      </Principal>
+      <Dependent Role="TBOPORCOTIRAMO">
+        <PropertyRef Name="IDOPOCRECOT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TBRAMO_IDGRUPGRA_FK">
+    <End Role="TBGRUPRAMO" Type="Self.TBGRUPRAMO" Multiplicity="1" />
+    <End Role="TBRAMO" Type="Self.TBRAMO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBGRUPRAMO">
+        <PropertyRef Name="IDGRURAM" />
+      </Principal>
+      <Dependent Role="TBRAMO">
+        <PropertyRef Name="IDGRURAM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="PKG_LIN_COM_SP_BANDEJA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_BANDEJA">
+    <Parameter Name="P_FECCRECOT" Type="varchar2" Mode="In" />
+    <Parameter Name="P_IDCOT" Type="varchar2" Mode="In" />
+    <Parameter Name="P_RUTCLIPIP" Type="varchar2" Mode="In" />
+    <Parameter Name="P_CODSUC" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PKG_LIN_COM_SP_CBM_COMPANI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_COMPANI" />
+  <Function Name="PKG_LIN_COM_SP_CBM_CORREDOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_CORREDOR" />
+  <Function Name="PKG_LIN_COM_SP_CBM_ESTADO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_ESTADO" />
+  <Function Name="PKG_LIN_COM_SP_CBM_GRUPO_RAMO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_GRUPO_RAMO" />
+  <Function Name="PKG_LIN_COM_SP_CBM_MONEDA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_MONEDA" />
+  <Function Name="PKG_LIN_COM_SP_CBM_RAMO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_RAMO">
+    <Parameter Name="P_GRURAM" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="PKG_LIN_COM_SP_CBM_SUCURSAL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMBCIVLC" StoreFunctionName="PKG_LIN_COM.SP_CBM_SUCURSAL" />
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="DEL_TBADMINISMOVIMIE" EntityType="Self.DEL_TBADMINISMOVIMIE" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBBANDERA" EntityType="Self.TBBANDERA" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBBITACORERRORES" EntityType="Self.TBBITACORERRORES" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBCLIENTE" EntityType="Self.TBCLIENTE" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBCOBASI" EntityType="Self.TBCOBASI" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBCOBERTUNOTAS" EntityType="Self.TBCOBERTUNOTAS" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBCOMPANI" EntityType="Self.TBCOMPANI" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBCORREDOR" EntityType="Self.TBCORREDOR" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBCOTIZACION" EntityType="Self.TBCOTIZACION" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBEJECUTI" EntityType="Self.TBEJECUTI" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBERROR" EntityType="Self.TBERROR" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBGRUPRAMO" EntityType="Self.TBGRUPRAMO" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBMONEDA" EntityType="Self.TBMONEDA" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBOPORCOTIRAMO" EntityType="Self.TBOPORCOTIRAMO" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBOPORCREACOTI" EntityType="Self.TBOPORCREACOTI" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBRAMO" EntityType="Self.TBRAMO" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBROL" EntityType="Self.TBROL" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBSUCURSA" EntityType="Self.TBSUCURSA" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="TBTIPOOCUP" EntityType="Self.TBTIPOOCUP" Schema="ADMBCIVLC" store:Type="Tables" />
+    <EntitySet Name="DEL_TBCOTIZACIONRAMO" EntityType="Self.DEL_TBCOTIZACIONRAMO" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"DEL_TBCOTIZACIONRAMO"."IDCOTRAM" AS "IDCOTRAM", 
+"DEL_TBCOTIZACIONRAMO"."IDCOT" AS "IDCOT", 
+"DEL_TBCOTIZACIONRAMO"."IDRAM" AS "IDRAM", 
+"DEL_TBCOTIZACIONRAMO"."ACT" AS "ACT"
+FROM "ADMBCIVLC"."DEL_TBCOTIZACIONRAMO" "DEL_TBCOTIZACIONRAMO"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DEL_TBEXCEPCIONES" EntityType="Self.DEL_TBEXCEPCIONES" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"DEL_TBEXCEPCIONES"."IDEXC" AS "IDEXC", 
+"DEL_TBEXCEPCIONES"."IDTIPMOV" AS "IDTIPMOV", 
+"DEL_TBEXCEPCIONES"."CODTIPERR" AS "CODTIPERR", 
+"DEL_TBEXCEPCIONES"."MEN" AS "MEN", 
+"DEL_TBEXCEPCIONES"."JSO" AS "JSO", 
+"DEL_TBEXCEPCIONES"."FECAUD" AS "FECAUD", 
+"DEL_TBEXCEPCIONES"."REP" AS "REP"
+FROM "ADMBCIVLC"."DEL_TBEXCEPCIONES" "DEL_TBEXCEPCIONES"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DEL_TBRESPUESTAAPI" EntityType="Self.DEL_TBRESPUESTAAPI" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"DEL_TBRESPUESTAAPI"."IDRESAPI" AS "IDRESAPI", 
+"DEL_TBRESPUESTAAPI"."IDTIPMOV" AS "IDTIPMOV", 
+"DEL_TBRESPUESTAAPI"."RESCOD" AS "RESCOD", 
+"DEL_TBRESPUESTAAPI"."VOUNUM" AS "VOUNUM", 
+"DEL_TBRESPUESTAAPI"."VIN" AS "VIN", 
+"DEL_TBRESPUESTAAPI"."GLOJSO" AS "GLOJSO", 
+"DEL_TBRESPUESTAAPI"."GLOJSOSAL" AS "GLOJSOSAL", 
+"DEL_TBRESPUESTAAPI"."GLOJSOENT" AS "GLOJSOENT", 
+"DEL_TBRESPUESTAAPI"."CODDOC" AS "CODDOC", 
+"DEL_TBRESPUESTAAPI"."FECAUD" AS "FECAUD", 
+"DEL_TBRESPUESTAAPI"."RESMES" AS "RESMES"
+FROM "ADMBCIVLC"."DEL_TBRESPUESTAAPI" "DEL_TBRESPUESTAAPI"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBCOMUNA" EntityType="Self.TBCOMUNA" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBCOMUNA"."CODCOMUNA" AS "CODCOMUNA", 
+"TBCOMUNA"."CODREGION" AS "CODREGION", 
+"TBCOMUNA"."NOMCOMUNA" AS "NOMCOMUNA"
+FROM "ADMBCIVLC"."TBCOMUNA" "TBCOMUNA"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBCOTIZACIONUBIC" EntityType="Self.TBCOTIZACIONUBIC" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBCOTIZACIONUBIC"."IDCOTUBI" AS "IDCOTUBI", 
+"TBCOTIZACIONUBIC"."IDCOT" AS "IDCOT", 
+"TBCOTIZACIONUBIC"."DIRECCI" AS "DIRECCI", 
+"TBCOTIZACIONUBIC"."DIRNRO" AS "DIRNRO", 
+"TBCOTIZACIONUBIC"."IDREG" AS "IDREG", 
+"TBCOTIZACIONUBIC"."IDCOMU" AS "IDCOMU", 
+"TBCOTIZACIONUBIC"."IDMURO" AS "IDMURO", 
+"TBCOTIZACIONUBIC"."IDTECHO" AS "IDTECHO", 
+"TBCOTIZACIONUBIC"."ANOCONSTRU" AS "ANOCONSTRU"
+FROM "ADMBCIVLC"."TBCOTIZACIONUBIC" "TBCOTIZACIONUBIC"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBCOTRAMMAT" EntityType="Self.TBCOTRAMMAT" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBCOTRAMMAT"."IDCOTRAMMAT" AS "IDCOTRAMMAT", 
+"TBCOTRAMMAT"."IDCOTRAM" AS "IDCOTRAM"
+FROM "ADMBCIVLC"."TBCOTRAMMAT" "TBCOTRAMMAT"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBCOTRAMNOT" EntityType="Self.TBCOTRAMNOT" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBCOTRAMNOT"."IDCOTRAMNOT" AS "IDCOTRAMNOT", 
+"TBCOTRAMNOT"."IDCOTRAM" AS "IDCOTRAM"
+FROM "ADMBCIVLC"."TBCOTRAMNOT" "TBCOTRAMNOT"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBCUESUBIC" EntityType="Self.TBCUESUBIC" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBCUESUBIC"."IDCUE" AS "IDCUE", 
+"TBCUESUBIC"."IDUBI" AS "IDUBI"
+FROM "ADMBCIVLC"."TBCUESUBIC" "TBCUESUBIC"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBEXCELIBERESE" EntityType="Self.TBEXCELIBERESE" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBEXCELIBERESE"."IDEXCLIBRES" AS "IDEXCLIBRES", 
+"TBEXCELIBERESE"."RUTCOR" AS "RUTCOR", 
+"TBEXCELIBERESE"."RUTCLI" AS "RUTCLI", 
+"TBEXCELIBERESE"."IDGRURAM" AS "IDGRURAM", 
+"TBEXCELIBERESE"."FECINI" AS "FECINI", 
+"TBEXCELIBERESE"."FECFIN" AS "FECFIN"
+FROM "ADMBCIVLC"."TBEXCELIBERESE" "TBEXCELIBERESE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBFORMAPAGO" EntityType="Self.TBFORMAPAGO" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBFORMAPAGO"."IDFORPAG" AS "IDFORPAG", 
+"TBFORMAPAGO"."IDPLAPAG" AS "IDPLAPAG"
+FROM "ADMBCIVLC"."TBFORMAPAGO" "TBFORMAPAGO"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBHOMOCAMPPIPECOTIRESE" EntityType="Self.TBHOMOCAMPPIPECOTIRESE" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBHOMOCAMPPIPECOTIRESE"."IDHOM" AS "IDHOM", 
+"TBHOMOCAMPPIPECOTIRESE"."IDPIP" AS "IDPIP", 
+"TBHOMOCAMPPIPECOTIRESE"."KEYPIP" AS "KEYPIP", 
+"TBHOMOCAMPPIPECOTIRESE"."NAMPIP" AS "NAMPIP", 
+"TBHOMOCAMPPIPECOTIRESE"."AMB" AS "AMB", 
+"TBHOMOCAMPPIPECOTIRESE"."TIPUSO" AS "TIPUSO", 
+"TBHOMOCAMPPIPECOTIRESE"."NOMCAMCOT" AS "NOMCAMCOT"
+FROM "ADMBCIVLC"."TBHOMOCAMPPIPECOTIRESE" "TBHOMOCAMPPIPECOTIRESE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBHOMOCAMPVALOPIPE" EntityType="Self.TBHOMOCAMPVALOPIPE" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBHOMOCAMPVALOPIPE"."IDVALCAMPIP" AS "IDVALCAMPIP", 
+"TBHOMOCAMPVALOPIPE"."VALCAMPIP" AS "VALCAMPIP", 
+"TBHOMOCAMPVALOPIPE"."IDHOM" AS "IDHOM", 
+"TBHOMOCAMPVALOPIPE"."VALCAMCOT" AS "VALCAMCOT", 
+"TBHOMOCAMPVALOPIPE"."VALAGRCAMCOT" AS "VALAGRCAMCOT"
+FROM "ADMBCIVLC"."TBHOMOCAMPVALOPIPE" "TBHOMOCAMPVALOPIPE"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBITEMS" EntityType="Self.TBITEMS" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBITEMS"."IDITE" AS "IDITE", 
+"TBITEMS"."IDUBI" AS "IDUBI"
+FROM "ADMBCIVLC"."TBITEMS" "TBITEMS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBMONASEBAS" EntityType="Self.TBMONASEBAS" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBMONASEBAS"."IDMONASEBAS" AS "IDMONASEBAS", 
+"TBMONASEBAS"."IDUBI" AS "IDUBI"
+FROM "ADMBCIVLC"."TBMONASEBAS" "TBMONASEBAS"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBOCUPACI" EntityType="Self.TBOCUPACI" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBOCUPACI"."IDOCUPACI" AS "IDOCUPACI", 
+"TBOCUPACI"."IDRAMO" AS "IDRAMO", 
+"TBOCUPACI"."IDTIPORIESGO" AS "IDTIPORIESGO", 
+"TBOCUPACI"."IDTIPOOCUPACI" AS "IDTIPOOCUPACI", 
+"TBOCUPACI"."ACTIVID" AS "ACTIVID"
+FROM "ADMBCIVLC"."TBOCUPACI" "TBOCUPACI"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBOPORTUNIDAD" EntityType="Self.TBOPORTUNIDAD" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBOPORTUNIDAD"."IDDEA" AS "IDDEA", 
+"TBOPORTUNIDAD"."IDCOT" AS "IDCOT"
+FROM "ADMBCIVLC"."TBOPORTUNIDAD" "TBOPORTUNIDAD"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBOPORTUNRECIENT" EntityType="Self.TBOPORTUNRECIENT" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBOPORTUNRECIENT"."IDOPOREC" AS "IDOPOREC", 
+"TBOPORTUNRECIENT"."CAMPIP" AS "CAMPIP", 
+"TBOPORTUNRECIENT"."VALCAMPIP" AS "VALCAMPIP"
+FROM "ADMBCIVLC"."TBOPORTUNRECIENT" "TBOPORTUNRECIENT"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBPLANPAGO" EntityType="Self.TBPLANPAGO" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBPLANPAGO"."IDPLAPAG" AS "IDPLAPAG"
+FROM "ADMBCIVLC"."TBPLANPAGO" "TBPLANPAGO"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBPRECUERAM" EntityType="Self.TBPRECUERAM" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBPRECUERAM"."IDPRECUE" AS "IDPRECUE", 
+"TBPRECUERAM"."IDRAM" AS "IDRAM"
+FROM "ADMBCIVLC"."TBPRECUERAM" "TBPRECUERAM"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBREGION" EntityType="Self.TBREGION" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBREGION"."CODREGION" AS "CODREGION", 
+"TBREGION"."NOMREGION" AS "NOMREGION"
+FROM "ADMBCIVLC"."TBREGION" "TBREGION"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBRESERVA" EntityType="Self.TBRESERVA" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBRESERVA"."IDRES" AS "IDRES", 
+"TBRESERVA"."RUTCOR" AS "RUTCOR", 
+"TBRESERVA"."RUTCLI" AS "RUTCLI", 
+"TBRESERVA"."IDGRURAM" AS "IDGRURAM", 
+"TBRESERVA"."FECINI" AS "FECINI", 
+"TBRESERVA"."FECFIN" AS "FECFIN"
+FROM "ADMBCIVLC"."TBRESERVA" "TBRESERVA"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBTIPORIES" EntityType="Self.TBTIPORIES" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBTIPORIES"."IDTIPRIE" AS "IDTIPRIE", 
+"TBTIPORIES"."NOMTIPRIE" AS "NOMTIPRIE"
+FROM "ADMBCIVLC"."TBTIPORIES" "TBTIPORIES"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBTOOLTIP" EntityType="Self.TBTOOLTIP" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBTOOLTIP"."CODTOOLTIP" AS "CODTOOLTIP", 
+"TBTOOLTIP"."NOMTOOLTIP" AS "NOMTOOLTIP"
+FROM "ADMBCIVLC"."TBTOOLTIP" "TBTOOLTIP"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBUBICACION" EntityType="Self.TBUBICACION" store:Type="Tables" store:Schema="ADMBCIVLC">
+      <DefiningQuery>SELECT 
+"TBUBICACION"."IDUBI" AS "IDUBI", 
+"TBUBICACION"."IDCOTRAM" AS "IDCOTRAM"
+FROM "ADMBCIVLC"."TBUBICACION" "TBUBICACION"</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_TBBITACORERRORES_IDERROR" Association="Self.FK_TBBITACORERRORES_IDERROR">
+      <End Role="TBERROR" EntitySet="TBERROR" />
+      <End Role="TBBITACORERRORES" EntitySet="TBBITACORERRORES" />
+    </AssociationSet>
+    <AssociationSet Name="FK1_TBCOBERTUNOTAS_IDCOBASI" Association="Self.FK1_TBCOBERTUNOTAS_IDCOBASI">
+      <End Role="TBCOBASI" EntitySet="TBCOBASI" />
+      <End Role="TBCOBERTUNOTAS" EntitySet="TBCOBERTUNOTAS" />
+    </AssociationSet>
+    <AssociationSet Name="TBCOTIZACION_CODSUC_FK" Association="Self.TBCOTIZACION_CODSUC_FK">
+      <End Role="TBSUCURSA" EntitySet="TBSUCURSA" />
+      <End Role="TBCOTIZACION" EntitySet="TBCOTIZACION" />
+    </AssociationSet>
+    <AssociationSet Name="TBCOTIZACION_EJECOM_FK" Association="Self.TBCOTIZACION_EJECOM_FK">
+      <End Role="TBEJECUTI" EntitySet="TBEJECUTI" />
+      <End Role="TBCOTIZACION" EntitySet="TBCOTIZACION" />
+    </AssociationSet>
+    <AssociationSet Name="TBCOTIZACION_FK" Association="Self.TBCOTIZACION_FK">
+      <End Role="TBOPORCREACOTI" EntitySet="TBOPORCREACOTI" />
+      <End Role="TBCOTIZACION" EntitySet="TBCOTIZACION" />
+    </AssociationSet>
+    <AssociationSet Name="TBCOTIZACION_IDBAN_FK" Association="Self.TBCOTIZACION_IDBAN_FK">
+      <End Role="TBBANDERA" EntitySet="TBBANDERA" />
+      <End Role="TBCOTIZACION" EntitySet="TBCOTIZACION" />
+    </AssociationSet>
+    <AssociationSet Name="TBEJECUTI_IDROL_FK" Association="Self.TBEJECUTI_IDROL_FK">
+      <End Role="TBROL" EntitySet="TBROL" />
+      <End Role="TBEJECUTI" EntitySet="TBEJECUTI" />
+    </AssociationSet>
+    <AssociationSet Name="TBOPORCOTIRAMO_FK" Association="Self.TBOPORCOTIRAMO_FK">
+      <End Role="TBOPORCREACOTI" EntitySet="TBOPORCREACOTI" />
+      <End Role="TBOPORCOTIRAMO" EntitySet="TBOPORCOTIRAMO" />
+    </AssociationSet>
+    <AssociationSet Name="TBRAMO_IDGRUPGRA_FK" Association="Self.TBRAMO_IDGRUPGRA_FK">
+      <End Role="TBGRUPRAMO" EntitySet="TBGRUPRAMO" />
+      <End Role="TBRAMO" EntitySet="TBRAMO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

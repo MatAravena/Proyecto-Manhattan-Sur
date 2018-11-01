@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3c66ed281eec4e95975f6a6ccb8c4f07" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="Model.DEL_TBADMINISMOVIMIE" Width="1.5" PointX="10.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBBANDERA" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBBITACORERRORE" Width="1.5" PointX="8" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCLIENTE" Width="1.5" PointX="10.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCOBASI" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCOBERTUNOTA" Width="1.5" PointX="13" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCOMPANI" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCORREDOR" Width="1.5" PointX="2.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCOTIZACION" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBEJECUTI" Width="1.5" PointX="8" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBERROR" Width="1.5" PointX="5.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBGRUPRAMO" Width="1.5" PointX="5.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBMONEDA" Width="1.5" PointX="10.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBOPORCOTIRAMO" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBOPORCREACOTI" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBRAMO" Width="1.5" PointX="8" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBROL" Width="1.5" PointX="5.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBSUCURSA" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBTIPOOCUP" Width="1.5" PointX="12.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DEL_TBEXCEPCIONES" Width="1.5" PointX="4.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DEL_TBRESPUESTAAPI" Width="1.5" PointX="6.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCOTIZACIONUBIC" Width="1.5" PointX="12.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCOTRAMMAT" Width="1.5" PointX="0.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCOTRAMNOT" Width="1.5" PointX="14.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBCUESUBIC" Width="1.5" PointX="14.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBEXCELIBERESE" Width="1.5" PointX="8.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBFORMAPAGO" Width="1.5" PointX="14.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBHOMOCAMPPIPECOTIRESE" Width="1.5" PointX="10.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBHOMOCAMPVALOPIPE" Width="1.5" PointX="12.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBITEM" Width="1.5" PointX="14.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBMONASEBA" Width="1.5" PointX="15.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBOCUPACI" Width="1.5" PointX="2.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBOPORTUNIDAD" Width="1.5" PointX="16.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBOPORTUNRECIENT" Width="1.5" PointX="4.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBPLANPAGO" Width="1.5" PointX="16.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBPRECUERAM" Width="1.5" PointX="16.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBRESERVA" Width="1.5" PointX="16.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBTIPORy" Width="1.5" PointX="16.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TBUBICACION" Width="1.5" PointX="17.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.TBCOTIZACION_IDBAN_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TBBITACORERRORES_IDERROR" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK1_TBCOBERTUNOTAS_IDCOBASI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TBCOTIZACION_CODSUC_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TBCOTIZACION_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TBEJECUTI_IDROL_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TBRAMO_IDGRUPGRA_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.TBOPORCOTIRAMO_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.DEL_TBCOTIZACIONRAMO" Width="1.5" PointX="15.375" PointY="18.75" />
+        <EntityTypeShape EntityType="Model.TBCOMUNA" Width="1.5" PointX="17.375" PointY="18.75" />
+        <EntityTypeShape EntityType="Model.TBREGION" Width="1.5" PointX="19.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.TBTOOLTIP" Width="1.5" PointX="19.375" PointY="7.75" />
+        <AssociationConnector Association="Model.TBCOTIZACION_EJECOM_FK" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

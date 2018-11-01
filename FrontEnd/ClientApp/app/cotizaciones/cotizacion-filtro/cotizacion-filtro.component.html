@@ -1,0 +1,64 @@
+<div id="content-wrapper" class="resultados-busqueda">
+    <div class="container-fluid">
+        <div class="row resultados-busqueda">
+            <div class="col-lg-4">
+                <h1 class="importante"><u>Bandeja</u></h1>
+            </div>
+            <div class="col-lg-8"></div>
+        </div>
+        <div class="card formulario-bloque">
+            <div class="card-header">
+                Filtros
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <p class="formularios largo mb-2">
+                            <label>Rut Cliente</label>
+                            <input class="form-control input-validation-error" type="text" id="rut_cliente" placeholder="Ej. 10000000-1" />
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                        <p class="formularios largo mb-2">
+                            <label for="search">Fecha Cotizacion</label>
+                            <input class="form-control" type="text" id="search" placeholder="Ej. M-e-12345678">
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <p class="formularios largo mb-2">
+                            <label>Nro. Cotizacion</label>
+                            <input class="form-control input-validation-error" type="text" id="rut_cliente" placeholder="Ej. 10000000-1" />
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                        <p class="formularios largo mb-2">
+                            <label for="search">Estado</label>
+                            <select class="form-control">
+                                <option disabled="">Elige una opcion</option>
+                                <option value="1">Abierta</option>
+                                <option value="2">Cerrada</option>
+                            </select>
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <p class="formularios largo mb-2">
+                            <label for="search">Sucursal</label>
+                            <select class="form-control">
+                                <option disabled="">Elige una opcion</option>    
+                                <option *ngFor="let sucursal of sucursales" id="{{sucursal.CODSUC}}">{{sucursal.DESSUC}}</option>
+                            </select>
+                            <span class="field-validation-error text-danger" data-valmsg-for="FiltrAplicado" data-valmsg-replace="true">Este campo es requerido</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="boton bg-verde" (click)="showCotizaciones()" title="guardar">Guardar</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
