@@ -7,20 +7,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { HeaderComponent } from './header/header.component';
 import { CotizacionComponent } from './cotizaciones/cotizacion.component';
 import { CotizacionDetalleComponent } from './cotizaciones/cotizacion-detalle/cotizacion-detalle.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { ServicioCotizacion } from './cotizaciones/cotizacion.service';
+import { DataStorageService } from './shared/data-storage.service';
 import { CotizacionFiltroComponent } from './cotizaciones/cotizacion-filtro/cotizacion-filtro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CotizacionVentanaComponent } from './cotizaciones/cotizacion-ventana/cotizacion-ventana.component';
+import { HttpClientModule } from '@angular/common/http';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -28,31 +27,23 @@ var AppModule = /** @class */ (function () {
         NgModule({
             declarations: [
                 AppComponent,
-                NavMenuComponent,
-                HomeComponent,
-                CounterComponent,
-                FetchDataComponent,
                 HeaderComponent,
                 CotizacionComponent,
                 CotizacionDetalleComponent,
                 DropdownDirective,
-                CotizacionFiltroComponent
+                CotizacionFiltroComponent,
+                CotizacionVentanaComponent
             ],
             imports: [
-                BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-                HttpClientModule,
+                BrowserModule,
                 FormsModule,
                 ReactiveFormsModule,
+                HttpModule,
                 AppRoutingModule,
-                BrowserAnimationsModule
-                //,RouterModule.forRoot([
-                //    { path: '', component: HomeComponent, pathMatch: 'full' },
-                //    { path: 'counter', component: CounterComponent },
-                //    { path: 'fetch-data', component: FetchDataComponent },
-                //    { path: 'bandejaEntrada', component: bandejaEntradaComponent }
-                //])
+                BrowserAnimationsModule,
+                HttpClientModule
             ],
-            providers: [ServicioCotizacion],
+            providers: [ServicioCotizacion, DataStorageService],
             bootstrap: [AppComponent]
         })
     ], AppModule);

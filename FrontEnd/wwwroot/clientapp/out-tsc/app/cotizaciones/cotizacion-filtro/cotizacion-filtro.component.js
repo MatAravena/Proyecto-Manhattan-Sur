@@ -11,33 +11,38 @@ import { Component } from '@angular/core';
 import { ServicioCotizacion } from '../cotizacion.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cotizacion } from '../cotizacion.model';
+import { RestService } from '../../rest.service';
+import 'daterangepicker';
+import 'jquery';
+import 'select2';
 var CotizacionFiltroComponent = /** @class */ (function () {
-    function CotizacionFiltroComponent(servicioCotizacion, route, router) {
+    function CotizacionFiltroComponent(servicioCotizacion, route, router, api_Rest) {
         this.servicioCotizacion = servicioCotizacion;
         this.route = route;
         this.router = router;
-        this.coti = new Cotizacion();
+        this.api_Rest = api_Rest;
+        this.filtro = new Cotizacion();
+        this.sucursales = [];
     }
     CotizacionFiltroComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.subscribe(function (params) {
             _this.id = +params['id'];
-            //this.coti = this.servicioCotizacion.getCotizacion(this.id);
+            //this.cotizacion = this.servicioCotizacion.getCotizacion(this.id);
+        });
+        this.getSucursales();
+    };
+    CotizacionFiltroComponent.prototype.getSucursales = function () {
+        var _this = this;
+        this.api_Rest.getSucursales().subscribe(function (data) {
+            _this.sucursales = data;
         });
     };
     CotizacionFiltroComponent.prototype.onClearCotizaciones = function () {
         this.router.navigate(['/cotizaciones']);
     };
-    CotizacionFiltroComponent.prototype.SetFiltros = function (form) {
-        this.coti.cliente = form.value.rut_cliente;
-        this.coti.nro_cotizacion = form.value.nro_cotizacion;
-        this.coti.fecha_cotizacion = form.value.fecha_cotizacion;
-        this.coti.estado = form.value.estado;
-        this.coti.sucursal = form.value.sucursal;
-        //this.cotiDetail.SetGrid();
-        //this._data.SetFiltros();
-        //this._data.SetFiltros(this.coti);
-        this.servicioCotizacion.actualizarCotizaciones(this.coti);
+    CotizacionFiltroComponent.prototype.llenarFiltro = function () {
+        console.log();
     };
     CotizacionFiltroComponent = __decorate([
         Component({
@@ -47,7 +52,8 @@ var CotizacionFiltroComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [ServicioCotizacion,
             ActivatedRoute,
-            Router])
+            Router,
+            RestService])
     ], CotizacionFiltroComponent);
     return CotizacionFiltroComponent;
 }());

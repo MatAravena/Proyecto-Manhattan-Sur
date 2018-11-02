@@ -15,17 +15,19 @@ var ServicioCotizacion = /** @class */ (function () {
         this.http = http;
         this._bandejaCambio = new Subject();
         this._filtros = this._bandejaCambio.asObservable();
+        this.cotizacionCambio = new Subject();
     }
+    ;
     ServicioCotizacion.prototype.ngOnInit = function () {
         var _this = this;
         this.http.get("api/CotizacionController/GetCotizaciones").subscribe(function (result) {
             _this._bandeja = result;
         }, function (error) { return console.error(error); });
     };
-    //setCotizaciones(cotizaciones: Cotizacion[]) {
-    //    this.cotizaciones = cotizaciones;
-    //    this.cotizacionCambio.next(this.cotizaciones.slice());
-    //}
+    ServicioCotizacion.prototype.setCotizaciones = function (cotizaciones) {
+        this.cotizaciones = cotizaciones;
+        this.cotizacionCambio.next(this.cotizaciones.slice());
+    };
     ServicioCotizacion.prototype.actualizarCotizaciones = function (cotizaciones) {
         var _this = this;
         // Send cotizaciones with filters

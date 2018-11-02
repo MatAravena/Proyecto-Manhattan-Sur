@@ -38,3 +38,23 @@ C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\BCI Lineas C
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\BCI Lineas Comerciales FrontEnd\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.csproj.CopyComplete
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\BCI Lineas Comerciales FrontEnd\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.dll
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\BCI Lineas Comerciales FrontEnd\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.pdb
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.csprojAssemblyReference.cache
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.dll
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.pdb
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.RazorAssemblyInfo.cache
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.RazorAssemblyInfo.cs
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.AssemblyInfoInputs.cache
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.AssemblyInfo.cs
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\FrontEnd.deps.json
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\FrontEnd.runtimeconfig.json
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\FrontEnd.runtimeconfig.dev.json
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\FrontEnd.dll
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\FrontEnd.pdb
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\DA_Model.dll
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\EntityFramework.dll
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\DA_Model.pdb
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\DA_Model.dll.config
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\bin\Debug\netcoreapp2.1\EntityFramework.xml
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.RazorTargetAssemblyInfo.cache
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\FrontEnd\obj\Debug\netcoreapp2.1\FrontEnd.csproj.CopyComplete

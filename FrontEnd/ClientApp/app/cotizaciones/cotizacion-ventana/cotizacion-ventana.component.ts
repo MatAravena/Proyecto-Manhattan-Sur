@@ -66,6 +66,4 @@ export class CotizacionVentanaComponent implements OnInit {
         });
     }
 
- 
-    }
 }

@@ -12,10 +12,25 @@ import { HttpClient } from '@angular/common/http';
 var RestService = /** @class */ (function () {
     function RestService(http) {
         this.http = http;
-        this.REST_URL = 'http://10.2.0.34/api/ComboList/Sucursal';
+        this.REST_URL = 'http://100.100.2.69:81/WSLineasComerciales/api/ComboList/';
     }
     RestService.prototype.getSucursales = function () {
-        return this.http.get(this.REST_URL);
+        return this.http.get(this.REST_URL + 'Sucursal');
+    };
+    RestService.prototype.getGrupoRamo = function () {
+        return this.http.get(this.REST_URL + 'GrupoRamos');
+    };
+    RestService.prototype.getRamos = function () {
+        return this.http.get(this.REST_URL + 'Ramos');
+    };
+    RestService.prototype.getCompaniaRiesgo = function () {
+        return this.http.get(this.REST_URL + 'CompaniaRiesgoActual');
+    };
+    RestService.prototype.getMoneda = function () {
+        return this.http.get(this.REST_URL + 'Moneda');
+    };
+    RestService.prototype.getActividad = function () {
+        return this.http.get(this.REST_URL + 'Actividad');
     };
     RestService = __decorate([
         Injectable({

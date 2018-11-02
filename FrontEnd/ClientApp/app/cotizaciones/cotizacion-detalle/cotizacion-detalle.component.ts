@@ -50,19 +50,12 @@ export class CotizacionDetalleComponent implements OnInit, OnDestroy {
     this.router.navigate(['edit'], {relativeTo: this.route});
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
+    
 
-    onEditarCotizacion() {
-        this.router.navigate(['edit'], { relativeTo: this.route });
-        // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
-    }
   ngOnDestroy(){
     this.subscripcion.unsubscribe();
     this.router.navigate(['/cotizaciones']);
   }
-
-    ngOnDestroy() {
-        this.subscripcion.unsubscribe();
-        this.router.navigate(['/cotizaciones']);
-    }
+    
 
 }

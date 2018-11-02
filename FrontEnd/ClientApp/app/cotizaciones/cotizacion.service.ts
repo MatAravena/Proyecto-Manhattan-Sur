@@ -10,6 +10,8 @@ export class ServicioCotizacion implements OnInit {
     _bandejaCambio = new Subject<Bandeja[]>();
     _filtros = this._bandejaCambio.asObservable();
     _bandeja: Bandeja[];
+    cotizaciones: Cotizacion[];
+    cotizacionCambio = new Subject<Cotizacion[]>();;
 
     constructor(private http: HttpClient) {
     }
@@ -20,10 +22,10 @@ export class ServicioCotizacion implements OnInit {
         }, error => console.error(error));
     }
 
-    //setCotizaciones(cotizaciones: Cotizacion[]) {
-    //    this.cotizaciones = cotizaciones;
-    //    this.cotizacionCambio.next(this.cotizaciones.slice());
-    //}
+    setCotizaciones(cotizaciones: Cotizacion[]) {
+        this.cotizaciones = cotizaciones;
+        this.cotizacionCambio.next(this.cotizaciones.slice());
+    }
 
     actualizarCotizaciones(cotizaciones: Cotizacion) {
         // Send cotizaciones with filters

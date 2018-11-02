@@ -7,13 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CotizacionComponent } from './cotizaciones/cotizacion.component';
+import { CotizacionVentanaComponent } from './cotizaciones/cotizacion-ventana/cotizacion-ventana.component';
 var appRoutes = [
     { path: '', redirectTo: '/cotizaciones', pathMatch: 'full' },
-    {
-        path: 'cotizaciones', component: CotizacionComponent, children: [
-        //{ path: ':id', component: CotizacionDetalleComponent }
-        ]
-    }
+    { path: 'cotizacion_ventana', component: CotizacionVentanaComponent },
+    { path: 'cotizaciones', component: CotizacionComponent }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

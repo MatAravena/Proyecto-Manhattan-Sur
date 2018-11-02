@@ -28,6 +28,9 @@ var CotizacionDetalleComponent = /** @class */ (function () {
         this.cotizaciones = this.servicioCotizacion.getCotizaciones();
         //this._data._filtros.subscribe(coti => this.coti = coti);
     };
+    //onAgregarDataCampos() {
+    //  this.servicioCotizacion.agregarDataCampos(this.cotizacion.datos_cotizacion);
+    //}
     //SetGrid() 0 {
     //    this.cotizaciones = this.servicioCotizacion.getCotizaciones();
     //}

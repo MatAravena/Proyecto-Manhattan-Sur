@@ -2,9 +2,7 @@
 using System.Net.Http;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using DA_Model; 
-using Newtonsoft.Json.Linq;
-using System.Web.Script.Serialization;
+using DA_Model;
 
 namespace FrontEnd.Controllers
 {
@@ -12,6 +10,7 @@ namespace FrontEnd.Controllers
     [ApiController]
     public class CotizacionController : ControllerBase
     {
+        MickUrls _mickUrls = new MickUrls();
         //HttpWebRequest for control
         //WebClient for simplicity and brevity
         //RestSharp for both on non-.NET 4.5 environments
@@ -30,14 +29,9 @@ namespace FrontEnd.Controllers
             //JavaScriptSerializer jss = new JavaScriptSerializer();
             //var d = jss.Deserialize<dynamic>(str);
 
-
-
-
-
-
-
             List<TBBANDEJAENTRADA> lst = null;
-            var response = client.GetAsync("http://100.100.2.69:81/WSLineasComerciales/Api/Bandeja/BandejaAll")
+            //var response = client.GetAsync("http://100.100.2.69:81/WSLineasComerciales/Api/Bandeja/BandejaAll")
+            var response = client.GetAsync(_mickUrls.BandejaEntradaAll)
                 .ContinueWith((tastwithresponse) =>
                 {
                     var respon = tastwithresponse.Result;
@@ -55,7 +49,8 @@ namespace FrontEnd.Controllers
         {
             HttpClient client = new HttpClient();
             List<TBBANDEJAENTRADA> lst = null;
-            var response = client.GetAsync("http://100.100.2.69:81/WSLineasComerciales/Api/Bandeja/BandejaAll")
+            //var response = client.GetAsync("http://100.100.2.69:81/WSLineasComerciales/Api/Bandeja/BandejaAll")
+            var response = client.GetAsync(_mickUrls.BandejaEntradaAll)
                 .ContinueWith((tastwithresponse) =>
                 {
                     var respon = tastwithresponse.Result;
@@ -73,7 +68,8 @@ namespace FrontEnd.Controllers
         {
             HttpClient client = new HttpClient();
             List<TBBANDEJAENTRADA> lst = null;
-            var response = client.GetAsync("http://100.100.2.69:81/WSLineasComerciales/Api/Bandeja/BandejaAll")
+            //var response = client.GetAsync("http://100.100.2.69:81/WSLineasComerciales/Api/Bandeja/BandejaAll")
+            var response = client.GetAsync(_mickUrls.BandejaEntradaAll)
                 .ContinueWith((tastwithresponse) =>
                 {
                     var respon = tastwithresponse.Result;
@@ -96,4 +92,31 @@ namespace FrontEnd.Controllers
         }
     }
 
+
+
+    public class MickUrls
+    {
+        public string BandejaEntradaAll { get; set; }
+        public string CotizacionSeleccionada { get; set; }
+        public string Sucursal { get; set; }
+        public string GrupoRamos { get; set; }
+        public string Ramos { get; set; }
+        public string Moneda { get; set; }
+        public string CompaniaRiesgoActual { get; set; }
+        public string Actividad { get; set; }
+        public string ActualizaCotizacion { get; set; }
+
+        public MickUrls()
+        {
+            BandejaEntradaAll = "http://whiteshark.cl/WSLineasComerciales/api/Bandeja/BandejaAll.php";
+            CotizacionSeleccionada = "http://whiteshark.cl/WSLineasComerciales/api/Cotizacion/GetCotiSeleccionada.php";
+            Sucursal = "http://whiteshark.cl/WSLineasComerciales/api/ComboList/Sucursal.php";
+            GrupoRamos = "http://whiteshark.cl/WSLineasComerciales/api/ComboList/GrupoRamos.php";
+            Ramos = "http://whiteshark.cl/WSLineasComerciales/api/ComboList/Ramos.php";
+            Moneda = "http://whiteshark.cl/WSLineasComerciales/api/ComboList/Moneda.php";
+            CompaniaRiesgoActual = "http://whiteshark.cl/WSLineasComerciales/api/ComboList/CompaniaRiesgoActual.php";
+            Actividad = "http://100.100.2.69:81/WSLineasComerciales/api/ComboList/Actividad.php";
+            ActualizaCotizacion = "http://whiteshark.cl/WSLineasComerciales/api/Cotizacion/ActualizaCotizacion";
+        }
+    }
 }

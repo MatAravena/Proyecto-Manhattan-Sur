@@ -8,23 +8,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 var HeaderComponent = /** @class */ (function () {
-    function HeaderComponent() {
+    function HeaderComponent(dataStorageService) {
+        this.dataStorageService = dataStorageService;
     }
     HeaderComponent.prototype.onSaveData = function () {
-        //this.dataStorageService.guardarCotizaciones()
-        //  .subscribe(
-        //    (response: Response) => {
-        //      console.log(response);
-        //    }
-        //  );
+        this.dataStorageService.guardarCotizaciones()
+            .subscribe(function (response) {
+            console.log(response);
+        });
+    };
+    HeaderComponent.prototype.onFetchData = function () {
+        this.dataStorageService.getCotizaciones();
     };
     HeaderComponent = __decorate([
         Component({
             selector: 'app-header',
             templateUrl: './header.component.html'
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [DataStorageService])
     ], HeaderComponent);
     return HeaderComponent;
 }());
