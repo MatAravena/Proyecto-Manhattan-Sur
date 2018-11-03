@@ -3,6 +3,8 @@ using System.Net.Http;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using DA_Model;
+using System.Net.Http.Formatting;
+using Newtonsoft.Json.Linq;
 
 namespace FrontEnd.Controllers
 {
@@ -18,9 +20,12 @@ namespace FrontEnd.Controllers
 
         [Route("api/CotizacionController/GetCotizacionesRutCli")]
         [HttpPost("[action]")]
-        public ActionResult<IEnumerable<TbBandejaAngular>> GetCotizacionesRutCli(dynamic param)
+        public ActionResult<IEnumerable<TbBandejaAngular>> GetCotizacionesRutCli([FromBody]JToken body)
         {
             HttpClient client = new HttpClient();
+
+            JObject headerData = body["Filtros"].Value<JObject>();
+            Dictionary<string, string> dic;
 
             //dynamic asd = JObject.Parse(param); 
             ////dynamic asd = JsonConvert.DeserializeObject(param);
@@ -30,6 +35,9 @@ namespace FrontEnd.Controllers
             //var d = jss.Deserialize<dynamic>(str);
 
             List<TBBANDEJAENTRADA> lst = null;
+            //var a = parameters.parameters1.Value;
+
+
             //var response = client.GetAsync("http://100.100.2.69:81/WSLineasComerciales/Api/Bandeja/BandejaAll")
             var response = client.GetAsync(_mickUrls.BandejaEntradaAll)
                 .ContinueWith((tastwithresponse) =>

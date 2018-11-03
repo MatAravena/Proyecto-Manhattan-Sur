@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DA_Model
+﻿namespace DA_Model
 {
     public class Filtros
     {
-        string cliente { get; set; }
-        string nro_cotizacion { get; set; }
-        string fecha_cotizacion { get; set; }
-        string estado { get; set; }
-        string sucursal { get; set; }
+        public string cliente { get; set; }
+        public string nro_cotizacion { get; set; }
+        public string fecha_cotizacion { get; set; }
+        public string estado { get; set; }
+        public string sucursal { get; set; }
 
         Filtros(string cliente,
                     string nro_cotizacion,
@@ -29,6 +23,9 @@ namespace DA_Model
 
         public Filtros(dynamic dyna)
         {
+
+
+
             this.cliente = dyna.cliente;
             this.nro_cotizacion = dyna.nro_cotizacion;
             this.fecha_cotizacion = dyna.fecha_cotizacion;

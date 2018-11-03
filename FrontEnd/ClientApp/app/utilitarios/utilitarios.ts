@@ -25,7 +25,7 @@ export class utilitariosComponent {
     }
 
     getSucursales() {
-        this.http.get<Sucursal[]>("http://10.2.0.34/api/ComboList/Sucursal").subscribe(result => {
+        this.http.get<Sucursal[]>("http://whiteshark.cl/WSLineasComerciales/api/ComboList/Sucursal.php").subscribe(result => {
             this.lstSucursales = result;
         }, error => console.error(error));
     }

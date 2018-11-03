@@ -28,17 +28,19 @@ var ServicioCotizacion = /** @class */ (function () {
         this.cotizaciones = cotizaciones;
         this.cotizacionCambio.next(this.cotizaciones.slice());
     };
-    ServicioCotizacion.prototype.actualizarCotizaciones = function (cotizaciones) {
+    ServicioCotizacion.prototype.actualizarCotizaciones = function (filtros) {
         var _this = this;
         // Send cotizaciones with filters
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        var params = new HttpParams().set("cliente", cotizaciones.cliente)
-            .set("estado", cotizaciones.estado)
-            .set("fecha_cotizacion", cotizaciones.fecha_cotizacion)
-            .set("nro_cotizacion", cotizaciones.nro_cotizacion)
-            .set("sucursal", cotizaciones.sucursal);
-        this.http.post("api/CotizacionController/GetCotizacionesRutCli", { params: params }).subscribe(function (result) {
+        var params = new HttpParams().set("cliente", filtros.cliente)
+            .set("estado", filtros.estado)
+            .set("fecha_cotizacion", filtros.fecha_cotizacion)
+            .set("nro_cotizacion", filtros.nro_cotizacion)
+            .set("sucursal", filtros.sucursal);
+        JSON.stringify(filtros);
+        //this.http.post("api/CotizacionController/GetCotizacionesRutCli", JSON.stringify(cotizaciones)).subscribe(result => {
+        this.http.post("api/CotizacionController/GetCotizacionesRutCli", { Filtros: params }).subscribe(function (result) {
             //this.http.get<Bandeja[]>('$api/CotizacionController/GetCotizacionesRutCli/${' + cotizaciones.cliente + '}').subscribe(result => {
             _this._bandeja = result;
         }, function (error) { return console.error(error); });

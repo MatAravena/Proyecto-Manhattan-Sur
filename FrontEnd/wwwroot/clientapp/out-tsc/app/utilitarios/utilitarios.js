@@ -19,7 +19,7 @@ var utilitariosComponent = /** @class */ (function () {
     }
     utilitariosComponent.prototype.getSucursales = function () {
         var _this = this;
-        this.http.get("http://10.2.0.34/api/ComboList/Sucursal").subscribe(function (result) {
+        this.http.get("http://whiteshark.cl/WSLineasComerciales/api/ComboList/Sucursal.php").subscribe(function (result) {
             _this.lstSucursales = result;
         }, function (error) { return console.error(error); });
     };

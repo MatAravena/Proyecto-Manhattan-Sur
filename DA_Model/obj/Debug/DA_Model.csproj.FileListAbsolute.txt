@@ -440,6 +440,7 @@ C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Man
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\DA_Model\bin\Debug\System.Memory.xml
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\DA_Model\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\DA_Model\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\DA_Model\obj\Debug\DA_Model.csprojAssemblyReference.cache
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\DA_Model\obj\Debug\DA_Model.csproj.CoreCompileInputs.cache
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\DA_Model\obj\Debug\DA_Model.csproj.CopyComplete
 C:\Users\maravena\Documents\Proyectos ACL\LineasComerciales\Fuentes\Proyecto Manhattan Sur\DA_Model\obj\Debug\DA_Model.dll

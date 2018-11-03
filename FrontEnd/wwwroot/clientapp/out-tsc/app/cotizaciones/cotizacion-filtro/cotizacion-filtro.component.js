@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 import { ServicioCotizacion } from '../cotizacion.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cotizacion } from '../cotizacion.model';
-import { RestService } from '../../rest.service';
+import { RestService } from '../../utilitarios/rest.service';
 import 'daterangepicker';
 import 'jquery';
 import 'select2';
@@ -43,6 +43,14 @@ var CotizacionFiltroComponent = /** @class */ (function () {
     };
     CotizacionFiltroComponent.prototype.llenarFiltro = function () {
         console.log();
+    };
+    CotizacionFiltroComponent.prototype.FilterCotizaciones = function () {
+        this.filtro.cliente = "123";
+        this.filtro.estado = "1";
+        this.filtro.fecha_cotizacion = "20181101";
+        this.filtro.nro_cotizacion = "69";
+        this.filtro.sucursal = "Valparaiso";
+        this.servicioCotizacion.actualizarCotizaciones(this.filtro);
     };
     CotizacionFiltroComponent = __decorate([
         Component({
