@@ -3,8 +3,8 @@ using System.Net.Http;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using DA_Model;
-using System.Net.Http.Formatting;
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace FrontEnd.Controllers
 {
@@ -20,23 +20,14 @@ namespace FrontEnd.Controllers
 
         [Route("api/CotizacionController/GetCotizacionesRutCli")]
         [HttpPost("[action]")]
-        public ActionResult<IEnumerable<TbBandejaAngular>> GetCotizacionesRutCli([FromBody]JToken body)
+        public ActionResult<IEnumerable<TbBandejaAngular>> GetCotizacionesRutCli([FromBody]dynamic body)
         {
             HttpClient client = new HttpClient();
 
-            JObject headerData = body["Filtros"].Value<JObject>();
-            Dictionary<string, string> dic;
-
-            //dynamic asd = JObject.Parse(param); 
-            ////dynamic asd = JsonConvert.DeserializeObject(param);
-            //Filtros _filtros = new Filtros(asd);
-            //System.Web.HttpUtility.
-            //JavaScriptSerializer jss = new JavaScriptSerializer();
-            //var d = jss.Deserialize<dynamic>(str);
-
+            // Debería poder ser legible de mejor manera !!
+            Filtros _filtro = new Filtros(body.filtro.updates);
             List<TBBANDEJAENTRADA> lst = null;
-            //var a = parameters.parameters1.Value;
-
+            List<TbBandejaAngular> lstSalida = null;
 
             //var response = client.GetAsync("http://100.100.2.69:81/WSLineasComerciales/Api/Bandeja/BandejaAll")
             var response = client.GetAsync(_mickUrls.BandejaEntradaAll)
@@ -48,7 +39,14 @@ namespace FrontEnd.Controllers
                     lst = JsonConvert.DeserializeObject<List<TBBANDEJAENTRADA>>(jsonstring.Result);
                 });
             response.Wait();
-            return ConvierteModeloAAngular(lst);   //.FindAll(x => x.rutClientePipe == rutCliente.ToString());
+
+            lstSalida = ConvierteModeloAAngular(lst).FindAll(x => _filtro.cliente != string.Empty ? x.rutClientePipe == _filtro.cliente : true
+                                                        //&& (_filtro.estado != string.Empty ? x. == _filtro.estado  : true)
+                                                        && _filtro.fecha_cotizacion != DateTime.Parse("00010101") ? x.fechaCreacionCotizacion == _filtro.fecha_cotizacion : true
+                                                        && _filtro.nro_cotizacion != 0 ? x.idCotizacion == _filtro.nro_cotizacion : true
+                                                        && _filtro.sucursal != string.Empty ? x.codigoSucursal == _filtro.sucursal : true
+                                                        );
+            return lstSalida;
         }
 
         [Route("api/CotizacionController/GetCotizaciones")]

@@ -49,12 +49,12 @@ export class CotizacionFiltroComponent implements OnInit {
 
     FilterCotizaciones() {
 
-        this.filtro.cliente = "123";
+        this.filtro.cliente = "78138410";
         this.filtro.estado = "1";
-        this.filtro.fecha_cotizacion = "20181101";
-        this.filtro.nro_cotizacion = "69";
-        this.filtro.sucursal = "Valparaiso";
-        
+        this.filtro.fecha_cotizacion = "";
+        this.filtro.nro_cotizacion = "77";
+        this.filtro.sucursal = "O";
+
         this.servicioCotizacion.actualizarCotizaciones(this.filtro);
 
     }

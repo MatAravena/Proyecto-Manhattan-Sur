@@ -31,24 +31,17 @@ export class ServicioCotizacion implements OnInit {
         // Send cotizaciones with filters
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        let params = new HttpParams().set("cliente", filtros.cliente)
+        let filtro = new HttpParams().set("cliente", filtros.cliente)
             .set("estado", filtros.estado)
             .set("fecha_cotizacion", filtros.fecha_cotizacion)
             .set("nro_cotizacion", filtros.nro_cotizacion)
             .set("sucursal", filtros.sucursal);
 
-        JSON.stringify(filtros);
+        //console.log(JSON.stringify(filtros));
 
-        //this.http.post("api/CotizacionController/GetCotizacionesRutCli", JSON.stringify(cotizaciones)).subscribe(result => {
-        this.http.post<Bandeja[]>("api/CotizacionController/GetCotizacionesRutCli", { Filtros: params }).subscribe(result => {
-            //this.http.get<Bandeja[]>('$api/CotizacionController/GetCotizacionesRutCli/${' + cotizaciones.cliente + '}').subscribe(result => {
+        this.http.post<Bandeja[]>("api/CotizacionController/GetCotizacionesRutCli", { filtro }).subscribe(result => {
             this._bandeja = result;
         }, error => console.error(error));
-
-        //this.http.post<Bandeja[]>("api/CotizacionController/GetCotizacionesRutCli", { params: JSON.stringify(cotizaciones.cliente) }).subscribe(result => {
-        //    //this.http.get<Bandeja[]>('$api/CotizacionController/GetCotizacionesRutCli/${' + cotizaciones.cliente + '}').subscribe(result => {
-        //    this._bandeja = result;
-        //}, error => console.error(error));
 
         this._bandejaCambio.next(this._bandeja.slice());
     }

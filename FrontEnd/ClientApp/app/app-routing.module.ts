@@ -5,8 +5,9 @@ import {CotizacionVentanaComponent} from './cotizaciones/cotizacion-ventana/coti
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/cotizaciones', pathMatch: 'full' },
-  { path: 'cotizacion_ventana', component: CotizacionVentanaComponent},
-  { path: 'cotizaciones', component: CotizacionComponent}
+    { path: 'cotizacion_ventana', component: CotizacionVentanaComponent },
+    { path: 'cotizaciones', component: CotizacionComponent },
+    { path: 'cotizaciones', component: CotizacionComponent }
 ];
 
 @NgModule({

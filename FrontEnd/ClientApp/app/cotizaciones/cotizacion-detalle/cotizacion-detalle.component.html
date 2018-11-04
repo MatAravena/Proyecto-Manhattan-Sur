@@ -1,12 +1,15 @@
 <div class="row">
-<div class="row">
     <div class="col-xl-12">
         <div class="card tablaDatos ">
             <div class="card tablaDatos">
                 <table id="tablaListaSiniestro" class="table  table-hover" data-show-refresh="false">
                     <thead>
                         <tr>
-                            <th data-field="RutCorredor">
+                            <th data-field="IdCotizacion">
+                                <div class="th-inner ">Rut Corredor</div>
+                                <div class="fht-cell"></div>
+                            </th>
+                            <th data-field="IdCotizacion">
                                 <div class="th-inner ">Rut Corredor</div>
                                 <div class="fht-cell"></div>
                             </th>
@@ -41,19 +44,53 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr *ngFor="let cotizacionAl of cotizaciones; let a = index">
+                            <!--<th scope="col-sm-3">{{a + 1}}</th>-->
+                            <td>{{ cotizacionAl.idCotizacion }}</td>
+                            <td>{{ cotizacionAl.rutCorredorPipe }}</td>
+                            <td>{{ cotizacionAl.nombreRazonSocial }}</td>
+                            <td>{{ cotizacionAl.nombreRamo }}</td>
+                            <td>{{ cotizacionAl.descripSucursal }}</td>
+
+                            <td>{{ cotizacionAl.rutClientePipe }}</td>
+                            <td>{{ cotizacionAl.descripOportunidaCotizacion }}</td>
+                            <td>{{ cotizacionAl.nombreEjecutivoComercial }}</td>
+                            <td> Suscriptor?No Data</td>
+
+                            <!--
+                                idCotizacion = idCotizacion;
+                                rutCorredorPipe = rutCorredorPipe;
+                                nombreRazonSocial = nombreRazonSocial;
+                                codigoSucursal = codigoSucursal;
+                                descripSucursal = descripSucursal;
+                                rutClientePipe = rutClientePipe;
+                                razonSocialCliente = razonSocialCliente;
+                                fechaCreacionCotizacion = fechaCreacionCotizacion;
+                                descripOportunidaCotizacion = descripOportunidaCotizacion;
+                                nombreEjecutivoComercial = nombreEjecutivoComercial;
+                                idSuscriptor = idSuscriptor;
+                                nombreRamo = nombreRamo;
+                            -->
+
+                            <td>
+                                <a title="Ver Seguimiento" href="" class="boton bg-azul small icon  ">Seguimiento<i class="bci-icon seguimiento"></i></a>
+                                <a title="Ver Detalles" href="" class="boton bg-verde small icon  ">Ver Detalles<i class="bci-icon view"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <!--<tbody>
                         <tr *ngFor="let i of [0,1,2]">
                             <td *ngFor="let i of [0,1,2,3,4,5,6,7]"></td>
                             <td>
                                 <a title="Ver Seguimiento" href="" class="boton bg-azul small icon  ">Seguimiento<i class="bci-icon seguimiento"></i></a>
                                 <a title="Ver Detalles" href="" class="boton bg-verde small icon  ">Ver Detalles<i class="bci-icon view"></i></a>
                             </td>
-                        </tr>                                               
-                    </tbody>
+                        </tr>
+                    </tbody>-->
                 </table>
                 <div class="separador"></div>
                 <p>Paginador opcion A</p>
                 <nav aria-label="...">
-
                     <ul class="pagination justify-content-center">
                         <li class="page-pre disabled"><a title="Anterior / deshabilitado">Anterior</a></li>
                         <li class="page-first "><a href="" title="Estás en página 1">1</a></li>
@@ -75,5 +112,3 @@
         </div>
     </div>
 </div>
-
-
